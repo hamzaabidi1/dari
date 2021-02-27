@@ -5,12 +5,17 @@ public class Reclamation {
 	private String subject;
 	private String description;
 	private String categorie;
-	public Reclamation(int id, String subject, String description, String categorie) {
+	private User user;
+	private Annonce annonce;
+	
+	public Reclamation(int id, String subject, String description, String categorie, User user, Annonce annonce) {
 		super();
 		this.id = id;
 		this.subject = subject;
 		this.description = description;
 		this.categorie = categorie;
+		this.user = user;
+		this.annonce = annonce;
 	}
 	public Reclamation() {
 		super();
@@ -38,6 +43,20 @@ public class Reclamation {
 	}
 	public void setCategorie(String categorie) {
 		this.categorie = categorie;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public Annonce getAnnonce() {
+		return annonce;
+	}
+	public void setAnnonce(Annonce annonce) {
+		this.annonce = annonce;
 	}
 	@Override
 	public String toString() {

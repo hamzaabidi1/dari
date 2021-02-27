@@ -6,15 +6,18 @@ public class Livraison {
 	private String tel; 
 	private MethodePayement methodePayement;
 	private LivraisonStatus livraisonStatus;
+	private AnnanceMeuble annonceMeuble;
+	
 	
 	public Livraison(int id, String adresse, String tel, MethodePayement methodePayement,
-			LivraisonStatus livraisonStatus) {
+			LivraisonStatus livraisonStatus, AnnanceMeuble annonceMeuble) {
 		super();
 		this.id = id;
 		Adresse = adresse;
 		this.tel = tel;
 		this.methodePayement = methodePayement;
 		this.livraisonStatus = livraisonStatus;
+		this.annonceMeuble = annonceMeuble;
 	}
 
 	public Livraison() {
@@ -59,6 +62,16 @@ public class Livraison {
 
 	public void setLivraisonStatus(LivraisonStatus livraisonStatus) {
 		this.livraisonStatus = livraisonStatus;
+	}
+	
+	
+
+	public AnnanceMeuble getAnnonceMeuble() {
+		return annonceMeuble;
+	}
+
+	public void setAnnonceMeuble(AnnanceMeuble annonceMeuble) {
+		this.annonceMeuble = annonceMeuble;
 	}
 
 	@Override

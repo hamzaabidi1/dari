@@ -10,6 +10,7 @@ public class Recherche {
 	private int nbrChambres;
 	private String gamme;
 	private Status statut;
+	private User user;
 	
 	
 	

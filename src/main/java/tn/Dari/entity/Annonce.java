@@ -1,6 +1,7 @@
 package tn.Dari.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Annonce {
 	private int id;
@@ -17,8 +18,14 @@ public class Annonce {
 	private int nbreChambre;
 	private String region;
 	private String ville;
+	private User user;
+	private List<RendezVous> rendezVous;
+	private List<Message> Messages;
+	
+	
 	public Annonce(int id, String title, String description, String categorie, float prix, String photo, String adresse,
-			Type type, String surface, String status, Date date, int nbreChambre, String region, String ville) {
+			Type type, String surface, String status, Date date, int nbreChambre, String region, String ville,
+			User user, List<RendezVous> rendezVous, List<Message> messages) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -34,6 +41,9 @@ public class Annonce {
 		this.nbreChambre = nbreChambre;
 		this.region = region;
 		this.ville = ville;
+		this.user = user;
+		this.rendezVous = rendezVous;
+		Messages = messages;
 	}
 	public Annonce() {
 		super();
@@ -121,6 +131,26 @@ public class Annonce {
 	}
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public List<RendezVous> getRendezVous() {
+		return rendezVous;
+	}
+	public void setRendezVous(List<RendezVous> rendezVous) {
+		this.rendezVous = rendezVous;
+	}
+	
+	public List<Message> getMessages() {
+		return Messages;
+	}
+	public void setMessages(List<Message> messages) {
+		Messages = messages;
 	}
 	@Override
 	public String toString() {

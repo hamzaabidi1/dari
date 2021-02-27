@@ -1,6 +1,8 @@
 package tn.Dari.entity;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 public class User {
 
@@ -19,6 +21,14 @@ public class User {
 	private Role role;
 	private Status status;
 	private String image;
+	private List<RendezVous> listeRendezVous;
+	private Set<AnnanceMeuble> listeAnnanceMeuble;
+	private Set<Annonce> listeAnnance;
+	private Set<Abonnement> listeAbannement;
+	private Set<Reclamation> listeReclamation;
+	private Set<Recherche> listeRecherche;
+	private Set<Operation> listeOperation;
+	private Set<Message> listeMessage;
 	
 	
 	public User() {
@@ -33,12 +43,10 @@ public class User {
 	}
 
 
-	
-
-
 	public User(int id, String firstName, String lastName, String pseudo, String password, String confirmedPassword,
 			String email, String phone, Date birthDate, String adress, String codePostal, Gender gender, Role role,
-			Status status, String image) {
+			Status status, String image, List<RendezVous> listeRendezVous, Set<AnnanceMeuble> listeAnnanceMeuble,
+			Set<Annonce> listeAnnance, Set<Abonnement> listeAbannement) {
 		super();
 		Id = id;
 		this.firstName = firstName;
@@ -55,6 +63,10 @@ public class User {
 		this.role = role;
 		this.status = status;
 		this.image = image;
+		this.listeRendezVous = listeRendezVous;
+		this.listeAnnanceMeuble = listeAnnanceMeuble;
+		this.listeAnnance = listeAnnance;
+		this.listeAbannement = listeAbannement;
 	}
 
 	public int getId() {
@@ -203,6 +215,85 @@ public class User {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+
+	public List<RendezVous> getListeRendezVous() {
+		return listeRendezVous;
+	}
+
+	public void setListeRendezVous(List<RendezVous> listeRendezVous) {
+		this.listeRendezVous = listeRendezVous;
+	}
+	
+	
+
+	public Set<AnnanceMeuble> getListeAnnanceMeuble() {
+		return listeAnnanceMeuble;
+	}
+
+	public void setListeAnnanceMeuble(Set<AnnanceMeuble> listeAnnanceMeuble) {
+		this.listeAnnanceMeuble = listeAnnanceMeuble;
+	}
+	
+	
+
+	public Set<Annonce> getListeAnnance() {
+		return listeAnnance;
+	}
+
+	public void setListeAnnance(Set<Annonce> listeAnnance) {
+		this.listeAnnance = listeAnnance;
+	}
+	
+	
+
+	public Set<Abonnement> getListeAbannement() {
+		return listeAbannement;
+	}
+
+	public void setListeAbannement(Set<Abonnement> listeAbannement) {
+		this.listeAbannement = listeAbannement;
+	}
+	
+	
+
+	public Set<Reclamation> getListeReclamation() {
+		return listeReclamation;
+	}
+
+	public void setListeReclamation(Set<Reclamation> listeReclamation) {
+		this.listeReclamation = listeReclamation;
+	}
+	
+	
+
+	public Set<Recherche> getListeRecherche() {
+		return listeRecherche;
+	}
+
+	public void setListeRecherche(Set<Recherche> listeRecherche) {
+		this.listeRecherche = listeRecherche;
+	}
+	
+	
+
+	public Set<Operation> getListeOperation() {
+		return listeOperation;
+	}
+
+	public void setListeOperation(Set<Operation> listeOperation) {
+		this.listeOperation = listeOperation;
+	}
+	
+	
+
+	public Set<Message> getListeMessage() {
+		return listeMessage;
+	}
+
+	public void setListeMessage(Set<Message> listeMessage) {
+		this.listeMessage = listeMessage;
 	}
 
 	@Override

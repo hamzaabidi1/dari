@@ -9,6 +9,7 @@ public class AnnanceMeuble {
 	private String adresse;
 	private List<String> images;
 	private float prix;
+	private User user;
 	
 	
 	
@@ -98,6 +99,20 @@ public class AnnanceMeuble {
 
 	public void setPrix(float prix) {
 		this.prix = prix;
+	}
+	
+	
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 

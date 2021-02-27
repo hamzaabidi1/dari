@@ -9,9 +9,16 @@ public class Reviews {
 	private int note4;
 	private int note5;
 	private int note6;
+	private User userReviwer ;
+	private User user2;
+	private Annonce annonce;
 	
 	
-	public Reviews(int idr, int note1, int note2, int note3, int note4, int note5, int note6) {
+	
+
+
+	public Reviews(int idr, int note1, int note2, int note3, int note4, int note5, int note6, User userReviwer,
+			User user2, Annonce annonce) {
 		super();
 		this.idr = idr;
 		this.note1 = note1;
@@ -20,6 +27,9 @@ public class Reviews {
 		this.note4 = note4;
 		this.note5 = note5;
 		this.note6 = note6;
+		this.userReviwer = userReviwer;
+		this.user2 = user2;
+		this.annonce = annonce;
 	}
 
 
@@ -95,6 +105,38 @@ public class Reviews {
 
 	public void setNote6(int note6) {
 		this.note6 = note6;
+	}
+	
+	
+
+
+	public User getUserReviwer() {
+		return userReviwer;
+	}
+
+
+	public void setUserReviwer(User userReviwer) {
+		this.userReviwer = userReviwer;
+	}
+
+
+	public User getUser2() {
+		return user2;
+	}
+
+
+	public void setUser2(User user2) {
+		this.user2 = user2;
+	}
+
+
+	public Annonce getAnnonce() {
+		return annonce;
+	}
+
+
+	public void setAnnonce(Annonce annonce) {
+		this.annonce = annonce;
 	}
 
 
