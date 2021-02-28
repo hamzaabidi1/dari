@@ -51,9 +51,9 @@ public class Annonce implements Serializable {
 	@ManyToOne
 	private User user;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
 	private List<RendezVous> rendezVous;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
 	private Set<Message> Messages;
 	
 	@OneToMany

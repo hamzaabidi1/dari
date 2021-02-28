@@ -29,8 +29,7 @@ public class AnnanceMeuble implements Serializable {
 	@Column
 	private List<String> images;
 	@Column
-	private float prix;
-	
+	private float prix;	
 	@ManyToOne
 	private User user;
 	

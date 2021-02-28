@@ -21,8 +21,6 @@ public class Message implements Serializable {
 	
 	@ManyToOne
 	private User sender;
-	@ManyToOne
-	private User reciver;
     @ManyToOne
 	private Annonce annonce;
 	
