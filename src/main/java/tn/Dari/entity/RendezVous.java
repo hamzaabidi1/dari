@@ -6,12 +6,16 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "rdv")
+@Table
 public class RendezVous implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
 	private Date dateRdv;

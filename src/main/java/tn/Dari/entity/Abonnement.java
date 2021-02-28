@@ -15,8 +15,8 @@ public class Abonnement implements Serializable {
 
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column

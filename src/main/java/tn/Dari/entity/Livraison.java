@@ -6,12 +6,16 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "livraison")
+@Table
 public class Livraison implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
 	private String Adresse;

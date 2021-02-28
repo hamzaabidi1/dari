@@ -6,12 +6,16 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "operation")
+@Table
 public class Operation implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
 	private Type operationType;

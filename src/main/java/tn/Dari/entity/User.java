@@ -8,12 +8,16 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table
 public class User implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int Id;
 	@Column
 	private String firstName;
@@ -44,21 +48,21 @@ public class User implements Serializable {
 	private Status status;
 	@Column
 	private String image;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<RendezVous> listeRendezVous;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<AnnanceMeuble> listeAnnanceMeuble;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Annonce> listeAnnance;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Abonnement> listeAbannement;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Reclamation> listeReclamation;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Recherche> listeRecherche;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Operation> listeOperation;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Message> listeMessage;
 	
 	

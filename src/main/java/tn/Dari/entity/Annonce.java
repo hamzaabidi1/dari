@@ -9,12 +9,18 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "annonce")
+@Table
 public class Annonce implements Serializable {
 	
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
 	private String title;
@@ -34,7 +40,7 @@ public class Annonce implements Serializable {
 	private String surface;
 	@Column
 	private String status;
-	@Column
+	@Temporal (TemporalType.DATE)
 	private Date date;
 	@Column
 	private int nbreChambre;
@@ -45,9 +51,9 @@ public class Annonce implements Serializable {
 	@ManyToOne
 	private User user;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<RendezVous> rendezVous;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Message> Messages;
 	
 	@OneToMany

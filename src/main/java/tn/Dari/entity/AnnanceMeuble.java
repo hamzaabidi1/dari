@@ -7,12 +7,17 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "annonceMeuble")
+@Table
 public class AnnanceMeuble implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column
