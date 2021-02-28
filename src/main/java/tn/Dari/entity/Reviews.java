@@ -1,16 +1,29 @@
 package tn.Dari.entity;
 
-public class Reviews {
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "reviews")
+public class Reviews implements Serializable {
 	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int idr;
+	
 	private int note1;
 	private int note2;
 	private int note3;
 	private int note4;
 	private int note5;
 	private int note6;
+	private String commentaire;
+    @ManyToOne
 	private User userReviwer ;
+    @ManyToOne
 	private User user2;
+    @ManyToOne
 	private Annonce annonce;
 	
 	

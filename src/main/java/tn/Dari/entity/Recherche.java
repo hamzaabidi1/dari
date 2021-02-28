@@ -1,7 +1,15 @@
 package tn.Dari.entity;
 
-public class Recherche {
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "recherche")
+public class Recherche implements Serializable {
 	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int Id;
 	private String region;
 	private String ville;
@@ -10,6 +18,7 @@ public class Recherche {
 	private int nbrChambres;
 	private String gamme;
 	private Status statut;
+	@ManyToOne
 	private User user;
 	
 	

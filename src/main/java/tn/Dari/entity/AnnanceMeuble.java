@@ -1,14 +1,29 @@
 package tn.Dari.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AnnanceMeuble {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "annonceMeuble")
+public class AnnanceMeuble implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String title;
 	private String description;
 	private String adresse;
 	private List<String> images;
 	private float prix;
+	
+	@ManyToOne
 	private User user;
 	
 	

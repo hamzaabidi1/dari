@@ -1,13 +1,28 @@
 package tn.Dari.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class RendezVous {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.*;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "rdv")
+public class RendezVous implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private Date dateRdv;
 	private ValidationRdv validation;
+	@ManyToOne
 	private Annonce annonce;
+	@ManyToOne
 	private User user;
+	
 	public RendezVous(int id, Date dateRdv, ValidationRdv validation, Annonce annonce, User user) {
 		super();
 		this.id = id;

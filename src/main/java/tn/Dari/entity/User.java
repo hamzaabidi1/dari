@@ -1,11 +1,18 @@
 package tn.Dari.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-public class User {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "user")
+public class User implements Serializable {
+
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int Id;
 	private String firstName;
 	private String lastName;
@@ -21,13 +28,21 @@ public class User {
 	private Role role;
 	private Status status;
 	private String image;
+	@OneToMany
 	private List<RendezVous> listeRendezVous;
+	@OneToMany
 	private Set<AnnanceMeuble> listeAnnanceMeuble;
+	@OneToMany
 	private Set<Annonce> listeAnnance;
+	@OneToMany
 	private Set<Abonnement> listeAbannement;
+	@OneToMany
 	private Set<Reclamation> listeReclamation;
+	@OneToMany
 	private Set<Recherche> listeRecherche;
+	@OneToMany
 	private Set<Operation> listeOperation;
+	@OneToMany
 	private Set<Message> listeMessage;
 	
 	

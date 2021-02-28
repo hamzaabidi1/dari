@@ -1,11 +1,21 @@
 package tn.Dari.entity;
 
-public class Reclamation {
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "reclamation")
+public class Reclamation implements Serializable{
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private String subject;
 	private String description;
 	private String categorie;
+	@ManyToOne
 	private User user;
+	@ManyToOne
 	private Annonce annonce;
 	
 	public Reclamation(int id, String subject, String description, String categorie, User user, Annonce annonce) {

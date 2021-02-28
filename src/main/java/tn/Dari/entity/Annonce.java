@@ -1,9 +1,19 @@
 package tn.Dari.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
-public class Annonce {
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "annonce")
+public class Annonce implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
 	private String description;
@@ -18,14 +28,22 @@ public class Annonce {
 	private int nbreChambre;
 	private String region;
 	private String ville;
+	@ManyToOne
 	private User user;
+	
+	@OneToMany
 	private List<RendezVous> rendezVous;
-	private List<Message> Messages;
+	@OneToMany
+	private Set<Message> Messages;
+	
+	@OneToMany
+	private Set<Operation> operations;
 	
 	
+
 	public Annonce(int id, String title, String description, String categorie, float prix, String photo, String adresse,
 			Type type, String surface, String status, Date date, int nbreChambre, String region, String ville,
-			User user, List<RendezVous> rendezVous, List<Message> messages) {
+			User user, List<RendezVous> rendezVous, Set<Message> messages, Set<Operation> operations) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -44,6 +62,7 @@ public class Annonce {
 		this.user = user;
 		this.rendezVous = rendezVous;
 		Messages = messages;
+		this.operations = operations;
 	}
 	public Annonce() {
 		super();
@@ -146,11 +165,19 @@ public class Annonce {
 		this.rendezVous = rendezVous;
 	}
 	
-	public List<Message> getMessages() {
+	
+	
+	public Set<Message> getMessages() {
 		return Messages;
 	}
-	public void setMessages(List<Message> messages) {
+	public void setMessages(Set<Message> messages) {
 		Messages = messages;
+	}
+	public Set<Operation> getOperations() {
+		return operations;
+	}
+	public void setOperations(Set<Operation> operations) {
+		this.operations = operations;
 	}
 	@Override
 	public String toString() {

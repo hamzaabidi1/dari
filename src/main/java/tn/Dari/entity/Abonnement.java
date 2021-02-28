@@ -1,12 +1,30 @@
 package tn.Dari.entity;
 
-public class Abonnement {
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "abonnement")
+public class Abonnement implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	
 	private String nom;
+	
 	private Delais delais;
+	
 	private AbonnementType type;
+	
+	
 	private String contrat;
+	
+	@ManyToOne
 	private User user;
+	
 	public Abonnement(int id, String nom, Delais delais, AbonnementType type, String contrat, User user) {
 		super();
 		this.id = id;

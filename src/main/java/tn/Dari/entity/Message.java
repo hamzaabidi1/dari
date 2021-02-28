@@ -1,11 +1,23 @@
 package tn.Dari.entity;
 
+import java.io.Serializable;
 
-public class Message {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "message")
+public class Message implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private String text;
+	
+	@ManyToOne
 	private User sender;
+	@ManyToOne
 	private User reciver;
+    @ManyToOne
 	private Annonce annonce;
 	
 	public Message(int id, String text, User sender, Annonce annonce) {

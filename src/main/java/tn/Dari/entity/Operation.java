@@ -1,16 +1,29 @@
 
 package tn.Dari.entity;
 
-public class Operation {
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "operation")
+public class Operation implements Serializable {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private Type operationType;
 	private String garantie;
 	private String identity;
 	private String lettreEngagement;
 	private int price;
 	private String contrat;
+	@ManyToOne
 	private User user;
+	@ManyToOne
 	private Annonce annonce;
+	
 	public Operation(int id, Type operationType, String garantie, String identity, String lettreEngagement, int price,
 			String contrat, User user, Annonce annonce) {
 		super();
