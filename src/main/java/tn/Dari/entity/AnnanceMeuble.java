@@ -3,9 +3,6 @@ package tn.Dari.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
 
 
@@ -15,12 +12,18 @@ public class AnnanceMeuble implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
 	
+	@Column
 	private String title;
+	@Column
 	private String description;
+	@Column
 	private String adresse;
+	@Column
 	private List<String> images;
+	@Column
 	private float prix;
 	
 	@ManyToOne

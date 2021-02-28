@@ -2,9 +2,6 @@ package tn.Dari.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
 
 
@@ -14,10 +11,15 @@ public class Livraison implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
+	@Column
 	private String Adresse;
+	@Column
 	private String tel; 
+	@Column
 	private MethodePayement methodePayement;
+	@Column
 	private LivraisonStatus livraisonStatus;
 	
 	@ManyToOne

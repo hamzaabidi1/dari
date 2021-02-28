@@ -5,21 +5,28 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "abonnement")
+@Table
 public class Abonnement implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
 	
-	
+	@Column
 	private String nom;
-	
+	@Column
 	private Delais delais;
-	
+	@Column
 	private AbonnementType type;
 	
-	
+	@Column
 	private String contrat;
 	
 	@ManyToOne

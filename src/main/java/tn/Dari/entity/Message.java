@@ -10,7 +10,9 @@ public class Message implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
+	@Column
 	private String text;
 	
 	@ManyToOne

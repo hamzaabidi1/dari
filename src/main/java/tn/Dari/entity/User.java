@@ -13,20 +13,36 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int Id;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String pseudo;
+	@Column
 	private String password;
+	
+	@Transient
 	private String confirmedPassword;
+	@Column
 	private String email;
+	@Column
 	private String phone;
+	@Column
 	private Date birthDate;
+	@Column
 	private String adress;
+	@Column
 	private String codePostal;
+	@Column
 	private Gender gender;
+	@Column
 	private Role role;
+	@Column
 	private Status status;
+	@Column
 	private String image;
 	@OneToMany
 	private List<RendezVous> listeRendezVous;

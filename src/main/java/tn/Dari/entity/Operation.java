@@ -11,13 +11,19 @@ public class Operation implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
-	
+	@Column
 	private Type operationType;
+	@Column
 	private String garantie;
+	@Column
 	private String identity;
+	@Column
 	private String lettreEngagement;
+	@Column
 	private int price;
+	@Column
 	private String contrat;
 	@ManyToOne
 	private User user;

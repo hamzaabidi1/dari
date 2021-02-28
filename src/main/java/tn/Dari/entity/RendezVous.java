@@ -3,11 +3,7 @@ package tn.Dari.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "rdv")
@@ -15,8 +11,11 @@ public class RendezVous implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
+	@Column
 	private Date dateRdv;
+	@Column
 	private ValidationRdv validation;
 	@ManyToOne
 	private Annonce annonce;

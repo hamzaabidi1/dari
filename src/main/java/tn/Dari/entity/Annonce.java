@@ -14,19 +14,33 @@ public class Annonce implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int id;
+	@Column
 	private String title;
+	@Column
 	private String description;
+	@Column
 	private String categorie;
+	@Column
 	private float prix;
+	@Column
 	private String photo;
+	@Column
 	private String adresse;
+	@Column
 	private Type type;
+	@Column
 	private String surface;
+	@Column
 	private String status;
+	@Column
 	private Date date;
+	@Column
 	private int nbreChambre;
+	@Column
 	private String region;
+	@Column
 	private String ville;
 	@ManyToOne
 	private User user;

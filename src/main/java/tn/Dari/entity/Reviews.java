@@ -10,14 +10,21 @@ public class Reviews implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int idr;
-	
+	@Column
 	private int note1;
+	@Column
 	private int note2;
+	@Column
 	private int note3;
+	@Column
 	private int note4;
+	@Column
 	private int note5;
+	@Column
 	private int note6;
+	@Column
 	private String commentaire;
     @ManyToOne
 	private User userReviwer ;

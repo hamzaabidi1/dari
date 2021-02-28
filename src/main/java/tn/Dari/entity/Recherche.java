@@ -10,13 +10,21 @@ public class Recherche implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column
 	private int Id;
+	@Column
 	private String region;
+	@Column
 	private String ville;
+	@Column
 	private float minPrice;
+	@Column
 	private float maxPrice;
+	@Column
 	private int nbrChambres;
+	@Column
 	private String gamme;
+	@Column
 	private Status statut;
 	@ManyToOne
 	private User user;
