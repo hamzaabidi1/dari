@@ -64,13 +64,7 @@ public class Message implements Serializable {
 		this.annonce = annonce;
 	}
 
-	public User getReciver() {
-		return reciver;
-	}
-
-	public void setReciver(User reciver) {
-		this.reciver = reciver;
-	}
+	
 	
 	
 	
