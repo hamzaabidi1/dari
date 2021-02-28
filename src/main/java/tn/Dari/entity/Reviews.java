@@ -33,8 +33,6 @@ public class Reviews implements Serializable {
     @ManyToOne
 	private User userReviwer ;
     @ManyToOne
-	private User user2;
-    @ManyToOne
 	private Annonce annonce;
 	
 	
@@ -42,7 +40,7 @@ public class Reviews implements Serializable {
 
 
 	public Reviews(int idr, int note1, int note2, int note3, int note4, int note5, int note6, User userReviwer,
-			User user2, Annonce annonce) {
+			 Annonce annonce) {
 		super();
 		this.idr = idr;
 		this.note1 = note1;
@@ -52,7 +50,6 @@ public class Reviews implements Serializable {
 		this.note5 = note5;
 		this.note6 = note6;
 		this.userReviwer = userReviwer;
-		this.user2 = user2;
 		this.annonce = annonce;
 	}
 
@@ -144,14 +141,7 @@ public class Reviews implements Serializable {
 	}
 
 
-	public User getUser2() {
-		return user2;
-	}
 
-
-	public void setUser2(User user2) {
-		this.user2 = user2;
-	}
 
 
 	public Annonce getAnnonce() {

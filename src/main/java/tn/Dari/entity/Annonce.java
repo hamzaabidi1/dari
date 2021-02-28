@@ -54,10 +54,12 @@ public class Annonce implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
 	private List<RendezVous> rendezVous;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
-	private Set<Message> Messages;
-	
-	@OneToMany
+	private Set<Message> Messages;	
+	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
 	private Set<Operation> operations;
+	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
+	private Set<Reviews> reviews;
+	
 	
 	
 

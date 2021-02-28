@@ -32,6 +32,8 @@ public class AnnanceMeuble implements Serializable {
 	private float prix;	
 	@ManyToOne
 	private User user;
+	@OneToOne(mappedBy="annonceMeuble")
+	private Livraison livraison;
 	
 	
 	

@@ -64,6 +64,9 @@ public class User implements Serializable {
 	private Set<Operation> listeOperation;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="sender")
 	private Set<Message> listeMessage;
+	@OneToMany(cascade = CascadeType.ALL ,mappedBy="userReviwer")
+	private Set<Reviews> listeReviews;
+	
 	
 	
 	public User() {

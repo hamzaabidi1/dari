@@ -24,9 +24,8 @@ public class Livraison implements Serializable {
 	@Column
 	private MethodePayement methodePayement;
 	@Column
-	private LivraisonStatus livraisonStatus;
-	
-	@ManyToOne
+	private LivraisonStatus livraisonStatus;	
+	@OneToOne
 	private AnnanceMeuble annonceMeuble;
 	
 	
