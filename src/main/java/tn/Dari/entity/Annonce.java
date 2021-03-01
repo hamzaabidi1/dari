@@ -1,7 +1,9 @@
 package tn.Dari.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -52,15 +54,15 @@ public class Annonce implements Serializable {
 	private User user;
 	
 	@OneToMany(mappedBy="annonce")
-	private List<RendezVous> rendezVous;
+	private List<RendezVous> rendezVous = new ArrayList<>();
 	@OneToMany(mappedBy="annonce")
-	private Set<Message> Messages;	
+	private Set<Message> Messages = new HashSet<>();;	
 	@OneToMany(mappedBy="annonce")
-	private Set<Operation> operations;
+	private Set<Operation> operations = new HashSet<>();;
 	@OneToMany(mappedBy="annonce")
-	private Set<Reviews> reviews;
+	private Set<Reviews> reviews = new HashSet<>();;
 	@OneToMany(mappedBy="annonce")
-	private Set<Reclamation> reclamations;
+	private Set<Reclamation> reclamations= new HashSet<>();;
 	
 	
 	

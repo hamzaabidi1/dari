@@ -1,7 +1,9 @@
 package tn.Dari.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -48,23 +50,23 @@ public class User implements Serializable {
 	@Column
 	private String image;
 	@OneToMany(mappedBy="user")
-	private List<RendezVous> listeRendezVous;
+	private List<RendezVous> listeRendezVous = new ArrayList<>();
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<AnnanceMeuble> listeAnnanceMeuble;
+	private Set<AnnanceMeuble> listeAnnanceMeuble= new HashSet<>();;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Annonce> listeAnnance;
+	private Set<Annonce> listeAnnance = new HashSet<>();;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Abonnement> listeAbannement;
+	private Set<Abonnement> listeAbannement = new HashSet<>();;
 	@OneToMany(mappedBy="user")
-	private Set<Reclamation> listeReclamation;
+	private Set<Reclamation> listeReclamation = new HashSet<>();;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Recherche> listeRecherche;
+	private Set<Recherche> listeRecherche = new HashSet<>();;
 	@OneToMany(mappedBy="user")
-	private Set<Operation> listeOperation;
+	private Set<Operation> listeOperation = new HashSet<>();;
 	@OneToMany(mappedBy="sender")
-	private Set<Message> listeMessage;
+	private Set<Message> listeMessage = new HashSet<>();;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="userReviwer")
-	private Set<Reviews> listeReviews;
+	private Set<Reviews> listeReviews = new HashSet<>();;
 	
 	
 	
