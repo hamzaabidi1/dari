@@ -22,8 +22,10 @@ public class Reclamation implements Serializable{
 	@Column
 	private String categorie;
 	@ManyToOne
+	 @JoinColumn(name = "user_id")
 	private User user;
 	@ManyToOne
+	 @JoinColumn(name = "anoonce_id")
 	private Annonce annonce;
 	
 	public Reclamation(int id, String subject, String description, String categorie, User user, Annonce annonce) {

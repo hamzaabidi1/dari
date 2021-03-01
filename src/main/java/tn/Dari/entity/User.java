@@ -48,7 +48,7 @@ public class User implements Serializable {
 	private Status status;
 	@Column
 	private String image;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
+	@OneToMany(mappedBy="user")
 	private List<RendezVous> listeRendezVous;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<AnnanceMeuble> listeAnnanceMeuble;
@@ -56,13 +56,13 @@ public class User implements Serializable {
 	private Set<Annonce> listeAnnance;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<Abonnement> listeAbannement;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
+	@OneToMany(mappedBy="user")
 	private Set<Reclamation> listeReclamation;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<Recherche> listeRecherche;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
+	@OneToMany(mappedBy="user")
 	private Set<Operation> listeOperation;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="sender")
+	@OneToMany(mappedBy="sender")
 	private Set<Message> listeMessage;
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="userReviwer")
 	private Set<Reviews> listeReviews;

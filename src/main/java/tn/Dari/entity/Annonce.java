@@ -51,14 +51,16 @@ public class Annonce implements Serializable {
 	@ManyToOne
 	private User user;
 	
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
+	@OneToMany(mappedBy="annonce")
 	private List<RendezVous> rendezVous;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
+	@OneToMany(mappedBy="annonce")
 	private Set<Message> Messages;	
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
+	@OneToMany(mappedBy="annonce")
 	private Set<Operation> operations;
-	@OneToMany(cascade = CascadeType.ALL ,mappedBy="annonce")
+	@OneToMany(mappedBy="annonce")
 	private Set<Reviews> reviews;
+	@OneToMany(mappedBy="annonce")
+	private Set<Reclamation> reclamations;
 	
 	
 	
