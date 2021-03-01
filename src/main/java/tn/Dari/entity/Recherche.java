@@ -28,7 +28,7 @@ public class Recherche implements Serializable {
 	private int nbrChambres;
 	@Column
 	private String gamme;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Status statut;
 	@ManyToOne
 	private User user;

@@ -17,15 +17,13 @@ public class Abonnement implements Serializable {
 	@Id
 	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	private int id;	
 	@Column
 	private String nom;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Delais delais;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private AbonnementType type;
-	
 	@Column
 	private String contrat;
 	

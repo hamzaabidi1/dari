@@ -18,8 +18,7 @@ public class AnnanceMeuble implements Serializable {
 	@Id
 	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	private int id;	
 	@Column
 	private String title;
 	@Column

@@ -17,7 +17,7 @@ public class Operation implements Serializable {
 	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Type operationType;
 	@Column
 	private String garantie;

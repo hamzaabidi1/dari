@@ -21,9 +21,9 @@ public class Livraison implements Serializable {
 	private String Adresse;
 	@Column
 	private String tel; 
-	@Column
+	@Enumerated(EnumType.STRING)
 	private MethodePayement methodePayement;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private LivraisonStatus livraisonStatus;	
 	@OneToOne
 	private AnnanceMeuble annonceMeuble;

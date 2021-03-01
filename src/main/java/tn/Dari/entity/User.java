@@ -26,25 +26,24 @@ public class User implements Serializable {
 	@Column
 	private String pseudo;
 	@Column
-	private String password;
-	
+	private String password;	
 	@Transient
 	private String confirmedPassword;
 	@Column
 	private String email;
 	@Column
 	private String phone;
-	@Column
+	@Temporal (TemporalType.DATE)
 	private Date birthDate;
 	@Column
 	private String adress;
 	@Column
 	private String codePostal;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Gender gender;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Role role;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	@Column
 	private String image;

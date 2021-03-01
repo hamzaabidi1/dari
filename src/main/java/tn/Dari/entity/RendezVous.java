@@ -17,9 +17,9 @@ public class RendezVous implements Serializable {
 	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
+	@Temporal (TemporalType.DATE)
 	private Date dateRdv;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private ValidationRdv validation;
 	@ManyToOne
 	private Annonce annonce;
