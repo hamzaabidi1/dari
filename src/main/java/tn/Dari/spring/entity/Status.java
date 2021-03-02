@@ -1,4 +1,4 @@
-package tn.Dari.entity;
+package tn.Dari.spring.entity;
 
 public enum Status {
 	active,blocked;

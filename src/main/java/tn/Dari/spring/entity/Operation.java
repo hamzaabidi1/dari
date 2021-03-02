@@ -1,5 +1,5 @@
 
-package tn.Dari.entity;
+package tn.Dari.spring.entity;
 
 import java.io.Serializable;
 
