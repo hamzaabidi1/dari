@@ -1,6 +1,7 @@
 package tn.Dari.spring.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -25,8 +26,8 @@ public class AnnanceMeuble implements Serializable {
 	private String description;
 	@Column
 	private String adresse;
-	@Column
-	private List<String> images;
+	@ElementCollection
+	private List<String> images = new ArrayList<>();
 	@Column
 	private float prix;	
 	@ManyToOne
