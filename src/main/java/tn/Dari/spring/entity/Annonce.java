@@ -11,7 +11,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table
 public class Annonce implements Serializable {
 	
 	
@@ -21,34 +20,24 @@ public class Annonce implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
 	private String title;
-	@Column
 	private String description;
-	@Column
 	private String categorie;
-	@Column
 	private float prix;
-	@Column
-	private String photo;
-	@Column
+	@ElementCollection
+	private List<String> photo = new ArrayList<>();
 	private String adresse;
-	@Column
+	@Enumerated(EnumType.STRING)
 	private Type type;
-	@Column
 	private String surface;
-	@Column
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private Status status;
 	@Temporal (TemporalType.DATE)
 	private Date date;
-	@Column
 	private int nbreChambre;
-	@Column
 	private String region;
-	@Column
 	private String ville;
 	@ManyToOne
 	private User user;
@@ -67,9 +56,10 @@ public class Annonce implements Serializable {
 	
 	
 
-	public Annonce(int id, String title, String description, String categorie, float prix, String photo, String adresse,
-			Type type, String surface, String status, Date date, int nbreChambre, String region, String ville,
-			User user, List<RendezVous> rendezVous, Set<Message> messages, Set<Operation> operations) {
+	
+	public Annonce(int id, String title, String description, String categorie, float prix, List<String> photo,
+			String adresse, Type type, String surface, Status status, Date date, int nbreChambre, String region,
+			String ville) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -85,10 +75,6 @@ public class Annonce implements Serializable {
 		this.nbreChambre = nbreChambre;
 		this.region = region;
 		this.ville = ville;
-		this.user = user;
-		this.rendezVous = rendezVous;
-		Messages = messages;
-		this.operations = operations;
 	}
 	public Annonce() {
 		super();
@@ -123,10 +109,11 @@ public class Annonce implements Serializable {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
-	public String getPhoto() {
+
+	public List<String> getPhoto() {
 		return photo;
 	}
-	public void setPhoto(String photo) {
+	public void setPhoto(List<String> photo) {
 		this.photo = photo;
 	}
 	public String getAdresse() {
@@ -147,10 +134,11 @@ public class Annonce implements Serializable {
 	public void setSurface(String surface) {
 		this.surface = surface;
 	}
-	public String getStatus() {
+
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	public Date getDate() {

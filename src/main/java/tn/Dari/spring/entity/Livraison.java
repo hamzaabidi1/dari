@@ -1,12 +1,12 @@
 package tn.Dari.spring.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
 
 @Entity
-@Table
 public class Livraison implements Serializable {
 	
 	/**
@@ -14,23 +14,22 @@ public class Livraison implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
 	private String Adresse;
-	@Column
 	private String tel; 
 	@Enumerated(EnumType.STRING)
 	private MethodePayement methodePayement;
 	@Enumerated(EnumType.STRING)
 	private LivraisonStatus livraisonStatus;	
-	@OneToOne
-	private AnnanceMeuble annonceMeuble;
+	@OneToMany(mappedBy="livraison")
+	private List<AnnanceMeuble> annonceMeuble;
 	
 	
+
+
 	public Livraison(int id, String adresse, String tel, MethodePayement methodePayement,
-			LivraisonStatus livraisonStatus, AnnanceMeuble annonceMeuble) {
+			LivraisonStatus livraisonStatus, List<AnnanceMeuble> annonceMeuble) {
 		super();
 		this.id = id;
 		Adresse = adresse;
@@ -86,11 +85,13 @@ public class Livraison implements Serializable {
 	
 	
 
-	public AnnanceMeuble getAnnonceMeuble() {
+	
+
+	public List<AnnanceMeuble> getAnnonceMeuble() {
 		return annonceMeuble;
 	}
 
-	public void setAnnonceMeuble(AnnanceMeuble annonceMeuble) {
+	public void setAnnonceMeuble(List<AnnanceMeuble> annonceMeuble) {
 		this.annonceMeuble = annonceMeuble;
 	}
 

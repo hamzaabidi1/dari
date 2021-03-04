@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Message implements Serializable {
 	
 	/**
@@ -13,12 +12,9 @@ public class Message implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column
 	private String text;
-	
 	@ManyToOne
 	private User sender;
     @ManyToOne

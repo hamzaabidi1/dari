@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Recherche implements Serializable {
 	
 	/**
@@ -13,20 +12,13 @@ public class Recherche implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int Id;
-	@Column
 	private String region;
-	@Column
 	private String ville;
-	@Column
 	private float minPrice;
-	@Column
 	private float maxPrice;
-	@Column
 	private int nbrChambres;
-	@Column
 	private String gamme;
 	@Enumerated(EnumType.STRING)
 	private Status statut;

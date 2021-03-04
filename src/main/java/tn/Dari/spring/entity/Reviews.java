@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Reviews implements Serializable {
 	
 	/**
@@ -13,22 +12,14 @@ public class Reviews implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int idr;
-	@Column
 	private int note1;
-	@Column
 	private int note2;
-	@Column
 	private int note3;
-	@Column
 	private int note4;
-	@Column
 	private int note5;
-	@Column
 	private int note6;
-	@Column
 	private String commentaire;
     @ManyToOne
 	private User userReviwer ;
@@ -129,6 +120,18 @@ public class Reviews implements Serializable {
 	}
 	
 	
+	
+	
+
+
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
 
 
 	public User getUserReviwer() {

@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table
 public class AnnanceMeuble implements Serializable {
 	
 	/**
@@ -17,22 +16,17 @@ public class AnnanceMeuble implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;	
-	@Column
 	private String title;
-	@Column
 	private String description;
-	@Column
 	private String adresse;
 	@ElementCollection
 	private List<String> images = new ArrayList<>();
-	@Column
 	private float prix;	
 	@ManyToOne
 	private User user;
-	@OneToOne(mappedBy="annonceMeuble")
+	@ManyToOne
 	private Livraison livraison;
 	
 	

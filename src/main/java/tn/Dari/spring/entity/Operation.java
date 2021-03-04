@@ -6,7 +6,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Operation implements Serializable {
 	
 	/**
@@ -14,20 +13,14 @@ public class Operation implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Enumerated(EnumType.STRING)
 	private Type operationType;
-	@Column
 	private String garantie;
-	@Column
 	private String identity;
-	@Column
 	private String lettreEngagement;
-	@Column
 	private int price;
-	@Column
 	private String contrat;
 	@ManyToOne
 	private User user;

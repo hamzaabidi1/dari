@@ -10,7 +10,6 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class User implements Serializable {
 
 	/**
@@ -18,28 +17,19 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int Id;
-	@Column
 	private String firstName;
-	@Column
 	private String lastName;
-	@Column
 	private String pseudo;
-	@Column
 	private String password;	
 	@Transient
 	private String confirmedPassword;
-	@Column
 	private String email;
-	@Column
 	private String phone;
 	@Temporal (TemporalType.DATE)
 	private Date birthDate;
-	@Column
 	private String adress;
-	@Column
 	private String codePostal;
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
@@ -47,7 +37,6 @@ public class User implements Serializable {
 	private Role role;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-	@Column
 	private String image;
 	@OneToMany(mappedBy="user")
 	private List<RendezVous> listeRendezVous = new ArrayList<>();

@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Abonnement implements Serializable {
 	
 	/**
@@ -15,16 +14,13 @@ public class Abonnement implements Serializable {
 
 
 	@Id
-	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;	
-	@Column
 	private String nom;
 	@Enumerated(EnumType.STRING)
 	private Delais delais;
 	@Enumerated(EnumType.STRING)
 	private AbonnementType type;
-	@Column
 	private String contrat;
 	
 	@ManyToOne
