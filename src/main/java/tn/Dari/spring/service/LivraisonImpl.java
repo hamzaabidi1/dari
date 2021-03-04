@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 import tn.Dari.spring.entity.Livraison;
+import tn.Dari.spring.entity.MethodePayement;
 import tn.Dari.spring.repository.LivraisonRepository;
 
 public class LivraisonImpl implements ILivraison {
@@ -41,6 +41,25 @@ public class LivraisonImpl implements ILivraison {
 	@Override
 	public Livraison retrieveAnnanceMeuble(int id) {
 		return livraisonRepository.findById(id).get();
+	}
+	
+	public List<Livraison> retrieveAllLivraisonAdresse(String adresse) {
+		List<Livraison> meubles=new ArrayList<>();
+		meubles=livraisonRepository.findAllByAdresseLike(adresse);
+		return meubles;
+		
+	}
+	public List<Livraison> retrieveAllLivraisonPayement(String methode) {
+		List<Livraison> meubles=new ArrayList<>();
+		meubles=livraisonRepository.findAllByMethodePayementLike(methode);
+		return meubles;
+		
+	}
+	public List<Livraison> retrieveAllLivraisonStatus(String status) {
+		List<Livraison> meubles=new ArrayList<>();
+		meubles=livraisonRepository.findAllByLivraisonStatusLike(status);
+		return meubles;
+		
 	}
 
 }

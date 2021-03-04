@@ -48,5 +48,19 @@ public class AnnonceMeubleImpl implements IAnnonceMeuble {
 		return meubles;
 		
 	}
+	
+	public List<AnnanceMeuble> retrieveAllAnnanceMeubleDescPrice() {
+		List<AnnanceMeuble> meubles=new ArrayList<>();
+		meubles=annonceMeubleRiposotry.findAllOrderByPrixDesc();
+		return meubles;
+		
+	}
+	
+	public List<AnnanceMeuble> retrieveAllAnnanceMeubleAdresse(String adresse) {
+		List<AnnanceMeuble> meubles=new ArrayList<>();
+		meubles=annonceMeubleRiposotry.findAllByAdresseLike(adresse);
+		return meubles;
+		
+	}
 
 }
