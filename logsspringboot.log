@@ -996,3 +996,37 @@ Using generated security password: 23ac5a56-9673-41a3-9565-a5bc68ca4dbc
 2021-03-05 12:10:50.579  INFO 7764 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-05 12:10:50.582  INFO 7764 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-05 12:10:50.589  INFO 7764 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 12:48:04.447  INFO 13788 --- [restartedMain] tn.Dari.spring.DariApplication           : Starting DariApplication using Java 1.8.0_251 on DESKTOP-1H1GQ80 with PID 13788 (C:\Users\hamza\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\Dari\target\classes started by hamza in C:\Users\hamza\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\Dari)
+2021-03-05 12:48:04.451  INFO 13788 --- [restartedMain] tn.Dari.spring.DariApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 12:48:04.528  INFO 13788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-05 12:48:04.528  INFO 13788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-05 12:48:05.390  INFO 13788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 12:48:05.501  INFO 13788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2021-03-05 12:48:06.246  INFO 13788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8091 (http)
+2021-03-05 12:48:06.257  INFO 13788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 12:48:06.258  INFO 13788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 12:48:06.349  INFO 13788 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-03-05 12:48:06.349  INFO 13788 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1820 ms
+2021-03-05 12:48:06.597  INFO 13788 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 12:48:06.672  INFO 13788 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 12:48:06.921  INFO 13788 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 12:48:07.057  INFO 13788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 12:48:07.323  INFO 13788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 12:48:07.342  INFO 13788 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-05 12:48:08.109  INFO 13788 --- [restartedMain] org.hibernate.tuple.PojoInstantiator     : HHH000182: No default (no-argument) constructor for class: tn.Dari.spring.entity.Message (class must be instantiated by Interceptor)
+2021-03-05 12:48:13.937  INFO 13788 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 12:48:13.952  INFO 13788 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 12:48:13.994  INFO 13788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-05 12:48:14.163  INFO 13788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 12:48:15.043  INFO 13788 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 708d7844-0155-40c5-afaf-4b2387557555
+
+2021-03-05 12:48:15.426  INFO 13788 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ff0daec, org.springframework.security.web.context.SecurityContextPersistenceFilter@24df1d8b, org.springframework.security.web.header.HeaderWriterFilter@601af4bb, org.springframework.security.web.csrf.CsrfFilter@5afe4030, org.springframework.security.web.authentication.logout.LogoutFilter@210cb1f4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b798e29, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3dc21712, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7010e756, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52a13e57, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35b7d449, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4541af7f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b982c85, org.springframework.security.web.session.SessionManagementFilter@375c64a, org.springframework.security.web.access.ExceptionTranslationFilter@3426b4a7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18b51e3f]
+2021-03-05 12:48:15.538  INFO 13788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8091 (http) with context path '/SpringMVC'
+2021-03-05 12:48:15.547  INFO 13788 --- [restartedMain] tn.Dari.spring.DariApplication           : Started DariApplication in 11.598 seconds (JVM running for 12.856)
+2021-03-05 12:48:32.410  INFO 13788 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-05 12:48:32.793  INFO 13788 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 12:48:32.794  INFO 13788 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 12:48:32.799  INFO 13788 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 12:48:32.807  INFO 13788 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
