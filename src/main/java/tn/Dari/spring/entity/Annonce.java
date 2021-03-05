@@ -31,7 +31,7 @@ public class Annonce implements Serializable {
 	private String adresse;
 	@Enumerated(EnumType.STRING)
 	private Type type;
-	private String surface;
+	private int surface;
 	@Enumerated(EnumType.STRING)
 	private Status status;
 	@Temporal (TemporalType.DATE)
@@ -58,7 +58,7 @@ public class Annonce implements Serializable {
 
 	
 	public Annonce(int id, String title, String description, String categorie, float prix, List<String> photo,
-			String adresse, Type type, String surface, Status status, Date date, int nbreChambre, String region,
+			String adresse, Type type, int surface, Status status, Date date, int nbreChambre, String region,
 			String ville) {
 		super();
 		this.id = id;
@@ -128,10 +128,10 @@ public class Annonce implements Serializable {
 	public void setType(Type type) {
 		this.type = type;
 	}
-	public String getSurface() {
+	public int getSurface() {
 		return surface;
 	}
-	public void setSurface(String surface) {
+	public void setSurface(int surface) {
 		this.surface = surface;
 	}
 
@@ -178,9 +178,7 @@ public class Annonce implements Serializable {
 	public void setRendezVous(List<RendezVous> rendezVous) {
 		this.rendezVous = rendezVous;
 	}
-	
-	
-	
+		
 	public Set<Message> getMessages() {
 		return Messages;
 	}
