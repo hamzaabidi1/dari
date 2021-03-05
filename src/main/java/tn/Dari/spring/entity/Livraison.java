@@ -16,7 +16,7 @@ public class Livraison implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
-	private String Adresse;
+	private String adresse;
 	private String tel; 
 	@Enumerated(EnumType.STRING)
 	private MethodePayement methodePayement;
@@ -32,7 +32,7 @@ public class Livraison implements Serializable {
 			LivraisonStatus livraisonStatus, List<AnnanceMeuble> annonceMeuble) {
 		super();
 		this.id = id;
-		Adresse = adresse;
+		this.adresse = adresse;
 		this.tel = tel;
 		this.methodePayement = methodePayement;
 		this.livraisonStatus = livraisonStatus;
@@ -52,11 +52,11 @@ public class Livraison implements Serializable {
 	}
 
 	public String getAdresse() {
-		return Adresse;
+		return adresse;
 	}
 
 	public void setAdresse(String adresse) {
-		Adresse = adresse;
+		this.adresse = adresse;
 	}
 
 	public String getTel() {
@@ -97,7 +97,7 @@ public class Livraison implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Livraison [id=" + id + ", Adresse=" + Adresse + ", tel=" + tel + ", methodePayement=" + methodePayement
+		return "Livraison [id=" + id + ", Adresse=" + adresse + ", tel=" + tel + ", methodePayement=" + methodePayement
 				+ ", livraisonStatus=" + livraisonStatus + "]";
 	}
 	

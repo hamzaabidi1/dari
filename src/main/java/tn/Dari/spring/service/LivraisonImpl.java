@@ -43,13 +43,13 @@ public class LivraisonImpl implements ILivraison {
 		return livraisonRepository.findById(id).get();
 	}
 	
-	public List<Livraison> retrieveAllLivraisonAdresse(String adresse) {
+	public List<Livraison> retrieveAllLivraisonAdresse(String Adresse) {
 		List<Livraison> meubles=new ArrayList<>();
-		meubles=livraisonRepository.findAllByAdresseLike(adresse);
+		meubles=livraisonRepository.findAllByAdresseLike(Adresse);
 		return meubles;
 		
 	}
-	public List<Livraison> retrieveAllLivraisonPayement(String methode) {
+	 public List<Livraison> retrieveAllLivraisonPayement(String methode) {
 		List<Livraison> meubles=new ArrayList<>();
 		meubles=livraisonRepository.findAllByMethodePayementLike(methode);
 		return meubles;
@@ -61,5 +61,4 @@ public class LivraisonImpl implements ILivraison {
 		return meubles;
 		
 	}
-
 }
