@@ -41,21 +41,21 @@ public class AnnonceMeubleImpl implements IAnnonceMeuble {
 	public AnnanceMeuble retrieveAnnanceMeuble(int id) {
 		return annonceMeubleRiposotry.findById(id).get();
 	}
-	
+	@Override
 	public List<AnnanceMeuble> retrieveAllAnnanceMeubleAscPrice() {
 		List<AnnanceMeuble> meubles=new ArrayList<>();
 		meubles=annonceMeubleRiposotry.findAllOrderByPrixAsc();
 		return meubles;
 		
 	}
-	
+	@Override
 	public List<AnnanceMeuble> retrieveAllAnnanceMeubleDescPrice() {
 		List<AnnanceMeuble> meubles=new ArrayList<>();
 		meubles=annonceMeubleRiposotry.findAllOrderByPrixDesc();
 		return meubles;
 		
 	}
-	
+	@Override
 	public List<AnnanceMeuble> retrieveAllAnnanceMeubleAdresse(String adresse) {
 		List<AnnanceMeuble> meubles=new ArrayList<>();
 		meubles=annonceMeubleRiposotry.findAllByAdresseLike(adresse);

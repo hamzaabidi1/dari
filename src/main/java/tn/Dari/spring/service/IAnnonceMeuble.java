@@ -12,5 +12,8 @@ public interface IAnnonceMeuble {
 	void deleteAnnanceMeuble(int id);
 	AnnanceMeuble updateAnnanceMeuble(AnnanceMeuble a);
 	AnnanceMeuble retrieveAnnanceMeuble(int id);
+	List<AnnanceMeuble> retrieveAllAnnanceMeubleAscPrice();
+	List<AnnanceMeuble> retrieveAllAnnanceMeubleDescPrice();
+	List<AnnanceMeuble> retrieveAllAnnanceMeubleAdresse(String adresse);
 
 }

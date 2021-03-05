@@ -5,13 +5,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import tn.Dari.spring.entity.AnnanceMeuble;
 import tn.Dari.spring.entity.Livraison;
-import tn.Dari.spring.entity.MethodePayement;
+import tn.Dari.spring.repository.AnnanceMeubleReopsitory;
 import tn.Dari.spring.repository.LivraisonRepository;
 
 public class LivraisonImpl implements ILivraison {
 	@Autowired
 	LivraisonRepository livraisonRepository;
+	@Autowired
+	AnnanceMeubleReopsitory annanceMeubleReopsitory;
 
 	@Override
 	public List<Livraison> retrieveAllLivraison() {
@@ -42,23 +45,35 @@ public class LivraisonImpl implements ILivraison {
 	public Livraison retrieveAnnanceMeuble(int id) {
 		return livraisonRepository.findById(id).get();
 	}
-	
+	@Override
 	public List<Livraison> retrieveAllLivraisonAdresse(String Adresse) {
 		List<Livraison> meubles=new ArrayList<>();
 		meubles=livraisonRepository.findAllByAdresseLike(Adresse);
 		return meubles;
 		
 	}
+	@Override
 	 public List<Livraison> retrieveAllLivraisonPayement(String methode) {
 		List<Livraison> meubles=new ArrayList<>();
 		meubles=livraisonRepository.findAllByMethodePayementLike(methode);
 		return meubles;
 		
 	}
+	@Override
 	public List<Livraison> retrieveAllLivraisonStatus(String status) {
 		List<Livraison> meubles=new ArrayList<>();
 		meubles=livraisonRepository.findAllByLivraisonStatusLike(status);
 		return meubles;
+		
+	}
+	@Override
+	public void AddMaubleToLivraison(int idAnnoncemeuble,int idlivraison) {
+		
+		Livraison livraison =livraisonRepository.findById(idlivraison).get();
+		List<AnnanceMeuble> meubles =livraison.getAnnonceMeuble();
+		meubles.add(annanceMeubleReopsitory.findById(idAnnoncemeuble).get());
+		livraison.setAnnonceMeuble(meubles);
+		livraisonRepository.save(livraison);
 		
 	}
 }

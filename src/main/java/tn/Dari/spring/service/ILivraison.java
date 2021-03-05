@@ -12,5 +12,10 @@ public interface ILivraison {
 	void deleteAnnanceMeuble(int id);
 	Livraison updateAnnanceMeuble(Livraison l);
 	Livraison retrieveAnnanceMeuble(int id);
+	List<Livraison> retrieveAllLivraisonAdresse(String Adresse);
+	List<Livraison> retrieveAllLivraisonStatus(String status);
+	List<Livraison> retrieveAllLivraisonPayement(String methode);
+	void AddMaubleToLivraison(int idAnnoncemeuble,int idlivraison);
+	
 
 }
