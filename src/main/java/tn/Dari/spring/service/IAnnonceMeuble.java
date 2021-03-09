@@ -15,5 +15,7 @@ public interface IAnnonceMeuble {
 	List<AnnanceMeuble> retrieveAllAnnanceMeubleAscPrice();
 	List<AnnanceMeuble> retrieveAllAnnanceMeubleDescPrice();
 	List<AnnanceMeuble> retrieveAllAnnanceMeubleAdresse(String adresse);
+	List<AnnanceMeuble> retrieveAllAnnanceMeubleregion(String region);
+	List<AnnanceMeuble> retrieveAllAnnanceMeubleville(String ville);
 
 }

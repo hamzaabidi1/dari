@@ -17,5 +17,7 @@ public interface AnnanceMeubleReopsitory extends CrudRepository<AnnanceMeuble,In
 	@Query("FROM AnnanceMeuble ORDER BY prix DESC")
 	List<AnnanceMeuble> findAllOrderByPrixDesc();
 	List<AnnanceMeuble> findAllByAdresseLike(String Adresse);
+	List<AnnanceMeuble> findAllByRegionLike(String region);
+	List<AnnanceMeuble> findAllByVilleLike(String ville);
 
 }

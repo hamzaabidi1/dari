@@ -63,4 +63,18 @@ public class AnnonceMeubleImpl implements IAnnonceMeuble {
 		
 	}
 
+	@Override
+	public List<AnnanceMeuble> retrieveAllAnnanceMeubleregion(String region) {
+		List<AnnanceMeuble> meubles=new ArrayList<>();
+		meubles=annonceMeubleRiposotry.findAllByRegionLike(region);
+		return meubles;
+	}
+
+	@Override
+	public List<AnnanceMeuble> retrieveAllAnnanceMeubleville(String ville) {
+		List<AnnanceMeuble> meubles=new ArrayList<>();
+		meubles=annonceMeubleRiposotry.findAllByVilleLike(ville);
+		return meubles;
+	}
+
 }
