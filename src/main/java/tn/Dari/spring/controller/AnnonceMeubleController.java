@@ -1,6 +1,5 @@
 package tn.Dari.spring.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class AnnonceMeubleController {
 		return announce;
 	}
 
-	@DeleteMapping("/remove-user/{announceMeuble-id}")
+	@DeleteMapping("/remove-announceMeuble/{announceMeuble-id}")
 	@ResponseBody
 	public void effacerAnnanceMeuble(@PathVariable("announceMeuble-id") int id) {
 

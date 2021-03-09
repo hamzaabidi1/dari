@@ -24,25 +24,25 @@ public class LivraisonImpl implements ILivraison {
 	}
 
 	@Override
-	public Livraison addAnnanceMeuble(Livraison l) {
+	public Livraison addLivraison(Livraison l) {
 		livraisonRepository.save(l);
 		return l;
 	}
 
 	@Override
-	public void deleteAnnanceMeuble(int id) {
+	public void deleteLivraison(int id) {
 		livraisonRepository.deleteById(id);
 		
 	}
 
 	@Override
-	public Livraison updateAnnanceMeuble(Livraison l) {
+	public Livraison updateLivraison(Livraison l) {
 		livraisonRepository.save(l);
 		return l;
 	}
 
 	@Override
-	public Livraison retrieveAnnanceMeuble(int id) {
+	public Livraison retrieveLivraison(int id) {
 		return livraisonRepository.findById(id).get();
 	}
 	@Override

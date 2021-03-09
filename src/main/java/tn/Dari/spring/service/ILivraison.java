@@ -8,10 +8,10 @@ import tn.Dari.spring.entity.Livraison;
 
 public interface ILivraison {
 	List<Livraison> retrieveAllLivraison();
-	Livraison addAnnanceMeuble(Livraison l);
-	void deleteAnnanceMeuble(int id);
-	Livraison updateAnnanceMeuble(Livraison l);
-	Livraison retrieveAnnanceMeuble(int id);
+	Livraison addLivraison(Livraison l);
+	void deleteLivraison(int id);
+	Livraison updateLivraison(Livraison l);
+	Livraison retrieveLivraison(int id);
 	List<Livraison> retrieveAllLivraisonAdresse(String Adresse);
 	List<Livraison> retrieveAllLivraisonStatus(String status);
 	List<Livraison> retrieveAllLivraisonPayement(String methode);
