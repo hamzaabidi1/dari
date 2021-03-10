@@ -5882,3 +5882,10 @@ java.lang.StackOverflowError: null
 2021-03-10 23:12:46.198  INFO 9020 --- [restartedMain] tn.Dari.spring.DariApplication           : Started DariApplication in 7.265 seconds (JVM running for 579.272)
 2021-03-10 23:12:46.200  INFO 9020 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2021-03-10 23:12:57.741  INFO 9020 --- [http-nio-8091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/Dari]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-10 23:12:57.743  INFO 9020 --- [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-10 23:12:57.744  INFO 9020 --- [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-10 23:18:21.078  INFO 9020 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-03-10 23:18:21.422  INFO 9020 --- [RMI TCP Connection(17)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-10 23:18:21.424  INFO 9020 --- [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-10 23:18:21.425  INFO 9020 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-03-10 23:18:21.430  INFO 9020 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
