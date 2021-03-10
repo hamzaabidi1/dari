@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.Dari.spring.entity.AnnanceMeuble;
+import tn.Dari.spring.service.AnnonceMeubleImpl;
 import tn.Dari.spring.service.IAnnonceMeuble;
 
 @RestController
 public class AnnonceMeubleController {
 
-	@Autowired
-	IAnnonceMeuble annonceMeuble;
+	
+	AnnonceMeubleImpl annonceMeuble = new AnnonceMeubleImpl();
 
 	@GetMapping("/retrieve-all-muebleAnnounce")
 	@ResponseBody

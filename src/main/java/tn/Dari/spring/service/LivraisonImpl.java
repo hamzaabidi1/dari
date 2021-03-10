@@ -15,6 +15,12 @@ public class LivraisonImpl implements ILivraison {
 	LivraisonRepository livraisonRepository;
 	@Autowired
 	AnnanceMeubleReopsitory annanceMeubleReopsitory;
+	
+	
+
+	public LivraisonImpl() {
+		super();
+	}
 
 	@Override
 	public List<Livraison> retrieveAllLivraison() {

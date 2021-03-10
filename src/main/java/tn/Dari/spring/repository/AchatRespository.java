@@ -19,6 +19,6 @@ public interface AchatRespository extends CrudRepository<Annonce,Integer >{
 	List<Annonce> findBySurfaceBetween(int surfMin,int surfMax);
 	List<Annonce> findAllByRegionLike(String region);
 	List<Annonce> findAllByVilleLike(String ville);
-	List<Annonce> findAllByNombreDeChambreLike(int nbreChambre);
+	List<Annonce> findAllBynbreChambreLike(int nbreChambre);
 
 }

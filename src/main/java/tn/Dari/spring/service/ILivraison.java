@@ -2,10 +2,12 @@ package tn.Dari.spring.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import tn.Dari.spring.entity.Livraison;
 
 
-
+@Repository
 public interface ILivraison {
 	List<Livraison> retrieveAllLivraison();
 	Livraison addLivraison(Livraison l);
