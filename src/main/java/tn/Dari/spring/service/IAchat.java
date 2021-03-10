@@ -1,5 +1,6 @@
 package tn.Dari.spring.service;
 
+<<<<<<< HEAD
 import java.util.List;
 
 
@@ -20,5 +21,8 @@ public interface IAchat {
 
 
 
+=======
+public interface IAchat {
+>>>>>>> cfd0ecfc70f8e1bd72f1399eac27d6770d0d4607
 
 }

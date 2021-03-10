@@ -1,5 +1,6 @@
 package tn.Dari.spring.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,5 +81,8 @@ public class AchatImpl implements IAchat {
 	
 	
 	
+=======
+public class AchatImpl implements IAchat {
+>>>>>>> cfd0ecfc70f8e1bd72f1399eac27d6770d0d4607
 
 }
