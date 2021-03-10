@@ -11,6 +11,13 @@ import tn.Dari.spring.repository.AchatRespository;
 public class AchatImpl implements IAchat {
 	@Autowired
 	AchatRespository achatRespository;
+	
+	
+
+	public AchatImpl() {
+		super();
+	
+	}
 
 	@Override
 	public List<Annonce> retrieveAllAnnanceAscPrice() {
@@ -64,7 +71,7 @@ public class AchatImpl implements IAchat {
 	@Override
 	public List<Annonce> retrieveAllAnnanceNombreDeChambre(int nbreChambre) {
 		List<Annonce> annonces=new ArrayList<>();
-		annonces=achatRespository.findAllByNombreDeChambreLike(nbreChambre);
+		annonces=achatRespository.findAllBynbreChambreLike(nbreChambre);
 		return annonces;
 	}
 

@@ -9,8 +9,18 @@ import tn.Dari.spring.entity.AnnanceMeuble;
 import tn.Dari.spring.repository.AnnanceMeubleReopsitory;
 
 public class AnnonceMeubleImpl implements IAnnonceMeuble {
+	
+	
+	
 	@Autowired
 	AnnanceMeubleReopsitory annonceMeubleRiposotry;
+	
+	
+	
+
+	public AnnonceMeubleImpl() {
+		super();
+	}
 
 	@Override
 	public List<AnnanceMeuble> retrieveAllAnnanceMeuble() {

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import tn.Dari.spring.entity.Annonce;
+import tn.Dari.spring.service.AchatImpl;
 import tn.Dari.spring.service.IAchat;
 
 @RestController
 public class AchatController {
 	
-	@Autowired
-	IAchat achatService;
+	AchatImpl achatService=new AchatImpl();
 	
 	
 	@GetMapping("/retrieve-all-Announce-Asc")
