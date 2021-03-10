@@ -5,28 +5,24 @@ import java.util.List;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Livraison implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String adresse;
-	private String tel; 
+	private String tel;
 	@Enumerated(EnumType.STRING)
 	private MethodePayement methodePayement;
 	@Enumerated(EnumType.STRING)
-	private LivraisonStatus livraisonStatus;	
-	@OneToMany(mappedBy="livraison")
+	private LivraisonStatus livraisonStatus;
+	@OneToMany(mappedBy = "livraison")
 	private List<AnnanceMeuble> annonceMeuble;
-	
-	
-
 
 	public Livraison(int id, String adresse, String tel, MethodePayement methodePayement,
 			LivraisonStatus livraisonStatus, List<AnnanceMeuble> annonceMeuble) {
@@ -82,10 +78,6 @@ public class Livraison implements Serializable {
 	public void setLivraisonStatus(LivraisonStatus livraisonStatus) {
 		this.livraisonStatus = livraisonStatus;
 	}
-	
-	
-
-	
 
 	public List<AnnanceMeuble> getAnnonceMeuble() {
 		return annonceMeuble;
@@ -100,9 +92,5 @@ public class Livraison implements Serializable {
 		return "Livraison [id=" + id + ", Adresse=" + adresse + ", tel=" + tel + ", methodePayement=" + methodePayement
 				+ ", livraisonStatus=" + livraisonStatus + "]";
 	}
-	
-	
-	
-	
 
 }
