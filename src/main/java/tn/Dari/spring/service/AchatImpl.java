@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.Dari.spring.entity.Annonce;
-import tn.Dari.spring.repository.AchatRespository;
-
+import tn.Dari.spring.repository.AchatRepository;
+@Service
 public class AchatImpl implements IAchat {
 	@Autowired
-	AchatRespository achatRespository;
+	AchatRepository achatRespository;
 
 	public AchatImpl() {
 		super();

@@ -2,18 +2,23 @@ package tn.Dari.spring.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.service.AchatImpl;
+import tn.Dari.spring.service.IAchat;
 
-
+@RequestMapping("/Achat")
 @RestController
 public class AchatController {
 
-	AchatImpl achatService = new AchatImpl();
+	//AchatImpl achatService = new AchatImpl();
+	@Autowired
+	IAchat achatService;
 
 	@GetMapping("/retrieve-all-Announce-Asc")
 	@ResponseBody

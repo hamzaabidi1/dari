@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import tn.Dari.spring.entity.AnnanceMeuble;
 
 
-@Repository
+
 public interface IAnnonceMeuble {
 	List<AnnanceMeuble> retrieveAllAnnanceMeuble();
 	AnnanceMeuble addAnnanceMeuble(AnnanceMeuble a);

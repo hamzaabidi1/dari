@@ -8,19 +8,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.service.AnnonceImpl;
+import tn.Dari.spring.service.IAnnonce;
 
 
 
-
+@RequestMapping("/Annonce")
 @RestController
 public class AnnonceController {
-AnnonceImpl annonceService = new AnnonceImpl();
+	
+//AnnonceImpl annonceService = new AnnonceImpl();
+	
+	@Autowired
+	IAnnonce annonceService;
+	
 	@GetMapping("/retrieve-all-Announces")
 	@ResponseBody
 	public List<Annonce> getAllAnnonce() {

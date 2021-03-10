@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.Dari.spring.entity.AnnanceMeuble;
 import tn.Dari.spring.entity.Livraison;
-import tn.Dari.spring.repository.AnnanceMeubleReopsitory;
+import tn.Dari.spring.repository.AnnanceMeubleRepository;
 import tn.Dari.spring.repository.LivraisonRepository;
 
+@Service
 public class LivraisonImpl implements ILivraison {
 	@Autowired
 	LivraisonRepository livraisonRepository;
 	@Autowired
-	AnnanceMeubleReopsitory annanceMeubleReopsitory;
+	AnnanceMeubleRepository annanceMeubleReopsitory;
 	
 	
 

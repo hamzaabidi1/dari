@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import tn.Dari.spring.entity.Annonce;
 
 @Repository
-public interface AchatRespository extends CrudRepository<Annonce,Integer >{
+public interface AchatRepository extends CrudRepository<Annonce,Integer >{
 	@Query("FROM Annonce ORDER BY prix ASC")
 	List<Annonce> findAllOrderByAscPrice();
 	@Query("FROM Annonce ORDER BY prix DESC")

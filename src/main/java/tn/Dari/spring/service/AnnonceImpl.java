@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.repository.AnnonceRepository;
-
+@Service
 public class AnnonceImpl implements IAnnonce {
 	@Autowired
 	AnnonceRepository annonceRepository;
