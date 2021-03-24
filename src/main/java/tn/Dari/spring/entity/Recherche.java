@@ -16,8 +16,11 @@ public class Recherche implements Serializable {
 	private int Id;
 	private String region;
 	private String ville;
+	private String categorie;
 	private float minPrice;
 	private float maxPrice;
+	private int minsurface;
+	private int maxsurface;
 	private int nbrChambres;
 	private String gamme;
 	@Enumerated(EnumType.STRING)
@@ -40,6 +43,23 @@ public class Recherche implements Serializable {
 		this.nbrChambres = nbrChambres;
 		this.gamme = gamme;
 		this.statut = statut;
+	}
+	
+
+	
+
+	public Recherche(String region, String ville, String categorie, float minPrice, float maxPrice, int minsurface,
+			int maxsurface, int nbrChambres, User user) {
+		super();
+		this.region = region;
+		this.ville = ville;
+		this.categorie = categorie;
+		this.minPrice = minPrice;
+		this.maxPrice = maxPrice;
+		this.minsurface = minsurface;
+		this.maxsurface = maxsurface;
+		this.nbrChambres = nbrChambres;
+		this.user = user;
 	}
 
 	public int getId() {
@@ -104,6 +124,44 @@ public class Recherche implements Serializable {
 
 	public void setStatut(Status statut) {
 		this.statut = statut;
+	}
+	
+	
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
+
+	public int getMinsurface() {
+		return minsurface;
+	}
+
+	public void setMinsurface(int minsurface) {
+		this.minsurface = minsurface;
+	}
+
+	public int getMaxsurface() {
+		return maxsurface;
+	}
+
+	public void setMaxsurface(int maxsurface) {
+		this.maxsurface = maxsurface;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

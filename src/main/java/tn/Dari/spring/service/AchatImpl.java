@@ -7,11 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.Dari.spring.entity.Annonce;
+import tn.Dari.spring.entity.Recherche;
+import tn.Dari.spring.entity.User;
 import tn.Dari.spring.repository.AchatRepository;
+import tn.Dari.spring.repository.rechercheRepository;
 @Service
 public class AchatImpl implements IAchat {
 	@Autowired
 	AchatRepository achatRespository;
+	@Autowired
+	rechercheRepository rechercheRespository;
 
 	public AchatImpl() {
 		super();
@@ -73,5 +78,39 @@ public class AchatImpl implements IAchat {
 		annonces = achatRespository.findAllBynbreChambreLike(nbreChambre);
 		return annonces;
 	}
+	@Override
+	public float prixParMetre (String region) {
+		if ((region =="benarous") || (region =="tunis") || (region =="ariana")|| (region =="manouba"))
+				return 1000;
+		else if ((region =="sousse") || (region =="hammamet") || (region =="monastir")|| (region =="sfax"))
+			return 600;
+		else if ((region =="bizerte") || (region =="gabes") || (region =="nabeul")|| (region =="djerba"))
+			return 450;
+		else 
+			return 200;	
+			
+		}
 
-}
+	@Override
+	public Annonce dernierBiensVendu() {	
+		return achatRespository.findLastAnnounce();
+	}
+	@Override
+	public void saveSearchForUser(String categorie,int surfMin, int surfMax,String region,float prixmin,float prixmax,String ville,int nbreChambre,User user) {
+		Recherche recherche = new Recherche(region, ville, categorie, prixmin, prixmax, surfMin, surfMax, nbreChambre, user);	
+		rechercheRespository.save(recherche);
+	}
+	@Override
+	public List<Annonce> retrieveAllAnnanceForSearch(){
+		List<Recherche> lstRecherche =(List<Recherche>)rechercheRespository.findAll();
+		List<Annonce> lstAnnonce = new ArrayList<Annonce>();
+		for (Recherche recherche : lstRecherche) {
+			lstAnnonce =achatRespository.findForUser(recherche.getCategorie(),recherche.getRegion(),recherche.getVille(),recherche.getNbrChambres(),recherche.getUser(),recherche.getMinPrice(),recherche.getMaxPrice(),recherche.getMinsurface(),recherche.getMaxsurface());
+		}
+		return lstAnnonce;
+	}
+	
+		
+	}
+
+
