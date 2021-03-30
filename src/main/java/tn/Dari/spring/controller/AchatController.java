@@ -1,6 +1,8 @@
 package tn.Dari.spring.controller;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -103,10 +105,19 @@ public class AchatController {
 	public void enregistrerRechercheUser(@RequestBody Recherche recherche) {
 	achatService.saveSearchForUser(recherche.getCategorie(), recherche.getMinsurface(), recherche.getMaxsurface(), recherche.getRegion(), recherche.getMinPrice(), recherche.getMaxPrice(), recherche.getVille(), recherche.getNbrChambres(), recherche.getUser());	
 	}
-	@PostMapping("/retrieve-all-RechercheAnnounce-user")
+	@GetMapping("/retrieve-all-RechercheAnnounce-user")
 	@ResponseBody
 	List<Annonce> findAllAnnanceForSearch(){
-		return achatService.retrieveAllAnnanceForSearch();
+		 return achatService.retrieveAllAnnanceForSearch();
 	}
+	
+	@GetMapping("/tauxPerRegion")
+	@ResponseBody
+	Map<String,Float> retriveTauxPerRegion(){
+		return achatService.tauxAchatPerRegion();
+		
+	}
+	
+	
 	 
 }
