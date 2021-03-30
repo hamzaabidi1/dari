@@ -139,7 +139,7 @@ public class AchatImpl implements IAchat {
 			//long value = 1+2;
 			//long Entryvalue =Long.valueOf((mapentry.getValue()).toString());
 			System.out.println("**************************"+mapentry.getValue().getClass());
-			long Entryvalue =((long) mapentry.getValue());
+			long Entryvalue =announcemap.get(mapentry.getKey());
 			long value =Entryvalue *100 / Allnbre;
 			String key =(String)mapentry.getKey();
 			System.out.println("*****key*****"+key);
