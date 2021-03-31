@@ -19,7 +19,7 @@ public interface IAchat {
 	float prixParMetre (String region);
 	Annonce dernierBiensVendu();
 	void saveSearchForUser(String categorie,int surfMin, int surfMax,String region,float prixmin,float prixmax,String ville,int nbreChambre,User user);
-	List<Annonce> retrieveAllAnnanceForSearch();
+	List<Annonce> retrieveAllAnnanceForSearchPerUser(User user);
 	Map<String,Float> tauxAchatPerRegion();
 
 

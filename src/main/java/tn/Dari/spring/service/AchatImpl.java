@@ -8,9 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.FlashMap;
 
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.Recherche;
@@ -113,8 +115,8 @@ public class AchatImpl implements IAchat {
 	}
 
 	@Override
-	public List<Annonce> retrieveAllAnnanceForSearch() {
-		List<Recherche> lstRecherche = (List<Recherche>) rechercheRespository.findAll();
+	public List<Annonce> retrieveAllAnnanceForSearchPerUser(User user) {
+		List<Recherche> lstRecherche = (List<Recherche>) rechercheRespository.findAllPerUser(user);
 		List<Annonce> lstAnnonce = new ArrayList<>();
 		for (Recherche recherche : lstRecherche) {
 			lstAnnonce = achatRespository.findForUser(recherche.getCategorie(), recherche.getRegion(),
@@ -126,28 +128,26 @@ public class AchatImpl implements IAchat {
 
 	@Override
 	public Map<String,Float> tauxAchatPerRegion() {
-		Map<String,Float> tauxMap = new HashMap<String,Float>();
+		Map<String,Float> tauxMap = new HashMap<>();
 		int Allnbre = achatRespository.nbreAnnounce();
-		Map<String, Integer> announcemap = new HashMap<String, Integer>();
+		Map<String, Integer> announcemap = new TreeMap<>();
 		announcemap = achatRespository.nbrAnnouncePerRegion();
-//		System.out.println("*****all nombre*****"+Allnbre);
-//		System.out.println("*****size announce map*****"+announcemap.size());
-//		System.out.println("*****announce map*****"+announcemap.toString());
-	for (Entry <String, Integer>  mapentry : announcemap.entrySet()) {
-			System.out.println("*****object*****"+mapentry.getClass());
-			
-			//long value = 1+2;
-			//long Entryvalue =Long.valueOf((mapentry.getValue()).toString());
-			System.out.println("**************************"+mapentry.getValue().getClass());
-			long Entryvalue =announcemap.get(mapentry.getKey());
-			long value =Entryvalue *100 / Allnbre;
-			String key =(String)mapentry.getKey();
-			System.out.println("*****key*****"+key);
-			System.out.println("*****value*****"+Entryvalue);
-			tauxMap.put(key,(float)value );	
-		//}
-		// Map<String,Float> targetMap=(Map)announcemap;
-	//	tauxMap.putAll(targetMap);
+		System.out.println("contenu map ."+announcemap.toString());
+		
+		 System.out.println("************key iterator**************"+announcemap.entrySet().toString());
+		 for(Map.Entry mapentry:announcemap.entrySet()) {
+			 for (String keys : announcemap.keySet())
+			 {
+				 System.out.println("************key iterator**************"+keys);
+			 
+			 float value = Float.parseFloat( mapentry.getValue().toString());
+			 System.out.println("**************************"+mapentry.toString());
+			 System.out.println("**************************"+value);
+			 System.out.println("**************************"+mapentry.getKey().toString());
+			 String key = mapentry.getKey().toString();
+			 tauxMap.put(key,value*100/Allnbre);
+		      //  tauxMap.put((String) mapentry.getKey(),(Float) mapentry.getValue());
+			 }
 	}
 
   return tauxMap;

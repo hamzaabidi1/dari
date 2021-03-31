@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.Recherche;
+import tn.Dari.spring.entity.User;
 import tn.Dari.spring.service.IAchat;
 import tn.Dari.spring.service.IAnnonce;
 
@@ -107,8 +108,8 @@ public class AchatController {
 	}
 	@GetMapping("/retrieve-all-RechercheAnnounce-user")
 	@ResponseBody
-	List<Annonce> findAllAnnanceForSearch(){
-		 return achatService.retrieveAllAnnanceForSearch();
+	List<Annonce> findAllAnnanceForSearch(@RequestBody User user){
+		 return achatService.retrieveAllAnnanceForSearchPerUser(user);
 	}
 	
 	@GetMapping("/tauxPerRegion")
