@@ -26,6 +26,7 @@ public class Annonce implements Serializable {
 	private String description;
 	private String categorie;
 	private float prix;
+	private int NumberOfVisits;
 	@ElementCollection
 	private List<String> photo = new ArrayList<>();
 	private String adresse;
@@ -57,15 +58,18 @@ public class Annonce implements Serializable {
 	
 
 	
-	public Annonce(int id, String title, String description, String categorie, float prix, List<String> photo,
-			String adresse, Type type, int surface, Status status, Date date, int nbreChambre, String region,
-			String ville) {
+	
+	public Annonce(int id, String title, String description, String categorie, float prix, int numberOfVisits,
+			List<String> photo, String adresse, Type type, int surface, Status status, Date date, int nbreChambre,
+			String region, String ville, User user, List<RendezVous> rendezVous, Set<Message> messages,
+			Set<Operation> operations, Set<Reviews> reviews, Set<Reclamation> reclamations) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.categorie = categorie;
 		this.prix = prix;
+		this.NumberOfVisits = numberOfVisits;
 		this.photo = photo;
 		this.adresse = adresse;
 		this.type = type;
@@ -75,6 +79,12 @@ public class Annonce implements Serializable {
 		this.nbreChambre = nbreChambre;
 		this.region = region;
 		this.ville = ville;
+		this.user = user;
+		this.rendezVous = rendezVous;
+		this.Messages = messages;
+		this.operations = operations;
+		this.reviews = reviews;
+		this.reclamations = reclamations;
 	}
 	public Annonce() {
 		super();
@@ -109,7 +119,12 @@ public class Annonce implements Serializable {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
-
+	public int getNumberOfVisits() {
+		return NumberOfVisits;
+	}
+	public void setNumberOfVisits(int numberOfVisits) {
+		NumberOfVisits = numberOfVisits;
+	}
 	public List<String> getPhoto() {
 		return photo;
 	}
@@ -194,10 +209,14 @@ public class Annonce implements Serializable {
 	@Override
 	public String toString() {
 		return "Annonce [id=" + id + ", title=" + title + ", description=" + description + ", categorie=" + categorie
-				+ ", prix=" + prix + ", photo=" + photo + ", adresse=" + adresse + ", type=" + type + ", surface="
-				+ surface + ", status=" + status + ", date=" + date + ", nbreChambre=" + nbreChambre + ", region="
-				+ region + ", ville=" + ville + "]";
+				+ ", prix=" + prix + ", NumberOfVisits=" + NumberOfVisits + ", photo=" + photo + ", adresse=" + adresse
+				+ ", type=" + type + ", surface=" + surface + ", status=" + status + ", date=" + date + ", nbreChambre="
+				+ nbreChambre + ", region=" + region + ", ville=" + ville + ", user=" + user + ", rendezVous="
+				+ rendezVous + ", Messages=" + Messages + ", operations=" + operations + ", reviews=" + reviews
+				+ ", reclamations=" + reclamations + "]";
 	}
+	
+	
 	
 	
 

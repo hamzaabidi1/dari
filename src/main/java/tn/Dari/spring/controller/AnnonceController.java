@@ -27,7 +27,7 @@ public class AnnonceController {
 	@Autowired
 	IAnnonce annonceService;
 	
-	@GetMapping("/retrieve-all-Announces")
+	@GetMapping("/retrieve-all-announces")
 	@ResponseBody
 	public List<Annonce> getAllAnnonce() {
 		List<Annonce> list = annonceService.retrieveAllAnnance();
@@ -79,24 +79,24 @@ public class AnnonceController {
 
 	}
 
-	@GetMapping("/retrieve-all-Announces-adresse")
+	@GetMapping("/retrieve-Announces-adresse/{adresse}")
 	@ResponseBody
-	public List<Annonce> getAllAnnanceAdresse(String adresse) {
+	public List<Annonce> getAllAnnanceAdresse(@PathVariable("adresse")String adresse) {
 
 		List<Annonce> list = annonceService.retrieveAllAnnanceAdresse(adresse);
 		return list;
 
 	}
-	@GetMapping("/retrieve-all-Announces-ville")
+	@GetMapping("/retrieve-Announces-ville/{ville}")
 	@ResponseBody
-	public List<Annonce> getAllAnnanceVille(String vile) {
+	public List<Annonce> getAllAnnanceVille(@PathVariable("ville")String vile) {
 		List<Annonce> list = annonceService.retrieveAllAnnanceville(vile);
 		return list;
 
 	}
-	@GetMapping("/retrieve-all-muebleAnnounces-region")
+	@GetMapping("/retrieve-all-Announces-region/{region}")
 	@ResponseBody
-	public List<Annonce> getAllAnnanceRegion(String region) {
+	public List<Annonce> getAllAnnanceRegion(@PathVariable("region")String region)  {
 
 		List<Annonce> list = annonceService.retrieveAllAnnanceregion(region);
 		return list;

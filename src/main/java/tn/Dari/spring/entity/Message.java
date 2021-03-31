@@ -6,20 +6,20 @@ import javax.persistence.*;
 
 @Entity
 public class Message implements Serializable {
-
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private String text;
 	@ManyToOne
 	private User sender;
-	@ManyToOne
+    @ManyToOne
 	private Annonce annonce;
-
+	
 	public Message(int id, String text, User sender, Annonce annonce) {
 		super();
 		this.id = id;
@@ -59,5 +59,13 @@ public class Message implements Serializable {
 	public void setAnnonce(Annonce annonce) {
 		this.annonce = annonce;
 	}
+
+	
+	
+	
+	
+	
+	
+	
 
 }

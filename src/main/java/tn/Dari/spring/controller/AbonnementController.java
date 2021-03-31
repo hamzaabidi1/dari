@@ -1,5 +1,6 @@
 package tn.Dari.spring.controller;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.Dari.spring.entity.Abonnement;
+import tn.Dari.spring.entity.AbonnementType;
+import tn.Dari.spring.entity.User;
 import tn.Dari.spring.service.IAbonnement;
+import tn.Dari.spring.service.SMSService;
 
 
 
@@ -30,8 +34,8 @@ public class AbonnementController {
 	}
 	@PostMapping("/add-Abonnement")
 	@ResponseBody
-	public Abonnement ajouterAbonnement(@RequestBody Abonnement a) {
-
+	public Abonnement ajouterAbonnement(@RequestBody Abonnement a ) {
+     SMSService.send("21573407","Votre abonnement est fait avec succée");
 		return AbonnementService.addAbonnement(a);
 	}
 	@DeleteMapping("/remove-Abonnement/{Abonnement-id}")
@@ -51,6 +55,31 @@ public class AbonnementController {
 	public Abonnement getAbonnement(@PathVariable("Abonnement-id") int id) {
 		return AbonnementService.retrieveAbonnement(id);
 	}
+	@GetMapping("/retrieve-Abonnement-PerUser")
+	@ResponseBody
+	public List<Abonnement> findAbonnement(@RequestBody User user)  {
+		return AbonnementService.retrieveAbonnementPerUser(user);
+	}
 	
+	/*@GetMapping("/verifyAssurance")
+	@ResponseBody
+	public boolean VerifyAssurance (@RequestBody User user ) {
+	List <Abonnement> ls= AbonnementService.retrieveAbonnementPerUser(user);
+	if (ls.contains(AbonnementType.assurance))
+	return true;
+	return false; 
+} */
+	@GetMapping("/recherche-Abonnement/{Abonnement-nom}/{Abonnement-type}")
+	@ResponseBody
+	public int RechercheAbonnement(@PathVariable("Abonnement-nom") String nom, @PathVariable("Abonnement-type") AbonnementType type, @RequestBody User user) {
+	return AbonnementService.findAbonnementByTypesAndName(nom,type,user);
+}
 
+
+	@GetMapping("/Taux-Abonnement")
+	@ResponseBody
+	Map<String, Float> RetrieveTauxAbonnement(){
+	return AbonnementService.tauxAbonnement();
+ 
+			}
 }

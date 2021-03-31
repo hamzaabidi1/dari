@@ -45,8 +45,10 @@ public class AnnonceImpl implements IAnnonce {
 	}
 
 	@Override
-	public Annonce retrieveAnnance(int id) {
-		Annonce annonce=annonceRepository.findById(id).get();
+	public Annonce retrieveAnnance(int id) {  
+		Annonce annonce = annonceRepository.findById(id).get();
+		annonce.setNumberOfVisits(annonce.getNumberOfVisits()+1);
+		annonceRepository.save(annonce);
 		return annonce;
 	}
 	
