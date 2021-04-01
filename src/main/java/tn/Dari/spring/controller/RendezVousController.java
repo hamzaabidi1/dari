@@ -35,7 +35,7 @@ public class RendezVousController {
 		List<RendezVous> list = RendezVousService.retreiveAllRendezVous();
 		return list;
 	}
-	@PostMapping(value="save-RendezVous")
+	@PostMapping(value="/save-RendezVous")
 	public RendezVous saveRendezVous(@RequestBody RendezVous rdv) {
 		RendezVousService.addRendezVous(rdv);
 		return rdv;

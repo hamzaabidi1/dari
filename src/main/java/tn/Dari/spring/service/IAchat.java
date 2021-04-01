@@ -6,6 +6,7 @@ import java.util.Set;
 
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.User;
+import tn.Dari.spring.entity.taux;
 
 public interface IAchat {
 	List<Annonce> retrieveAllAnnanceAscPrice();

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.User;
+import tn.Dari.spring.entity.taux;
 
 @Repository
 public interface AchatRepository extends CrudRepository<Annonce,Integer >{
@@ -27,8 +28,8 @@ public interface AchatRepository extends CrudRepository<Annonce,Integer >{
 	Annonce findLastAnnounce();
 	@Query("select a FROM Annonce a where a.categorie=?1 or a.region=?2 or a.ville=?3 or a.nbreChambre=?4 or a.prix between ?6 and ?7 or a.surface between ?8 and ?9  and a.user=?5 and type='vente' ")
     List<Annonce> findForUser(String categorie,String region,String ville,int nbreChambre,User user,float prixMin,float prixfMax,int surfMin, int surfMax);
-	@Query("select a.region,count(a) from Annonce a group by a.region")
-	Map<String,Integer> nbrAnnouncePerRegion();
+	@Query("select a.region from Annonce a  ")
+	List<String> findAllRegion();
 	@Query("select count(a) from Annonce a")
 	int nbreAnnounce();
 }

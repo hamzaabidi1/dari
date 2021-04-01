@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.Recherche;
 import tn.Dari.spring.entity.User;
+import tn.Dari.spring.entity.taux;
 import tn.Dari.spring.service.IAchat;
 import tn.Dari.spring.service.IAnnonce;
 

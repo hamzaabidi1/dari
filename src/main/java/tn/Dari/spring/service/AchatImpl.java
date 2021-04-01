@@ -14,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.FlashMap;
 
+import io.jsonwebtoken.lang.Collections;
 import tn.Dari.spring.entity.Annonce;
 import tn.Dari.spring.entity.Recherche;
 import tn.Dari.spring.entity.User;
+import tn.Dari.spring.entity.taux;
 import tn.Dari.spring.repository.AchatRepository;
 import tn.Dari.spring.repository.rechercheRepository;
 
@@ -130,26 +132,22 @@ public class AchatImpl implements IAchat {
 	public Map<String,Float> tauxAchatPerRegion() {
 		Map<String,Float> tauxMap = new HashMap<>();
 		int Allnbre = achatRespository.nbreAnnounce();
-		Map<String, Integer> announcemap = new TreeMap<>();
-		announcemap = achatRespository.nbrAnnouncePerRegion();
-		System.out.println("contenu map ."+announcemap.toString());
-		
-		 System.out.println("************key iterator**************"+announcemap.entrySet().toString());
-		 for(Map.Entry mapentry:announcemap.entrySet()) {
-			 for (String keys : announcemap.keySet())
-			 {
-				 System.out.println("************key iterator**************"+keys);
-			 
-			 float value = Float.parseFloat( mapentry.getValue().toString());
-			 System.out.println("**************************"+mapentry.toString());
-			 System.out.println("**************************"+value);
-			 System.out.println("**************************"+mapentry.getKey().toString());
-			 String key = mapentry.getKey().toString();
-			 tauxMap.put(key,value*100/Allnbre);
-		      //  tauxMap.put((String) mapentry.getKey(),(Float) mapentry.getValue());
-			 }
-	}
-
+		List<String> AllRegion = new ArrayList<String>();
+		AllRegion=achatRespository.findAllRegion();
+		String compare =AllRegion.get(0);
+		int nbre =0;
+		for (int i=0;i<AllRegion.size();i++) {			
+				if (compare==AllRegion.get(0)) {
+				nbre++;
+				float result =nbre*100/Allnbre;
+				tauxMap.put(compare, result);
+				AllRegion.remove(0);
+				compare=AllRegion.get(0);
+					nbre=0;
+				}
+		//	compare =AllRegion.get(0);
+			}
+			
   return tauxMap;
 
 	
