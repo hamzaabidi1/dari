@@ -11,6 +11,6 @@ import tn.Dari.spring.entity.AnnanceMeuble;
 
 @Repository
 public interface AnnanceMeubleReopsitory extends CrudRepository<AnnanceMeuble,Integer > {
-	List<AnnanceMeuble> findByOrderByprixAsc();
+	//List<AnnanceMeuble> findByOrderByprixAsc();
 
 }

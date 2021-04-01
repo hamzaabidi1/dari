@@ -42,8 +42,7 @@ public class Annonce implements Serializable {
 	@ManyToOne
 	private User user;
 	
-	@OneToMany(mappedBy="annonce")
-	private List<RendezVous> rendezVous = new ArrayList<>();
+	
 	@OneToMany(mappedBy="annonce")
 	private Set<Message> Messages = new HashSet<>();;	
 	@OneToMany(mappedBy="annonce")
@@ -172,13 +171,6 @@ public class Annonce implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public List<RendezVous> getRendezVous() {
-		return rendezVous;
-	}
-	public void setRendezVous(List<RendezVous> rendezVous) {
-		this.rendezVous = rendezVous;
-	}
-	
 	
 	
 	public Set<Message> getMessages() {
