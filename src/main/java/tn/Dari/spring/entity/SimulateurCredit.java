@@ -1,25 +1,63 @@
 package tn.Dari.spring.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class SimulateurCredit {
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int age;
-	private final float tmm =6.15F;
-	private float pourcentageBinefice;
 	private float montant;
 	private float salaireBrut;
 	private float revenuAnnuel;
+	private int duree;
+	@ManyToOne
+	private User user;
+	@ManyToOne
+	private Banque banque;
 	
-	public SimulateurCredit(int id, int age, float pourcentageBinefice, float montant, float salaireBrut,
-			float revenuAnnuel) {
+	
+	public SimulateurCredit(int id, int age, float montant, float salaireBrut, float revenuAnnuel,int duree, User user,
+			Banque banque) {
 		super();
 		this.id = id;
 		this.age = age;
-		this.pourcentageBinefice = pourcentageBinefice;
 		this.montant = montant;
 		this.salaireBrut = salaireBrut;
 		this.revenuAnnuel = revenuAnnuel;
+		this.duree = duree;
+		this.user = user;
+		this.banque = banque;
 	}
+	
+	public SimulateurCredit(int id, int age, float salaireBrut, float revenuAnnuel,int duree, User user, Banque banque) {
+		super();
+		this.id = id;
+		this.age = age;
+		this.salaireBrut = salaireBrut;
+		this.revenuAnnuel = revenuAnnuel;
+		this.duree = duree;
+		this.user = user;
+		this.banque = banque;
+	}
+	public SimulateurCredit(int age, float salaireBrut, float revenuAnnuel,int duree, User user, Banque banque) {
+		this.age = age;
+		this.salaireBrut = salaireBrut;
+		this.revenuAnnuel = revenuAnnuel;
+		this.duree = duree;
+		this.user = user;
+		this.banque = banque;
+	}
+
 	public SimulateurCredit() {
 		super();
 	}
@@ -33,14 +71,8 @@ public class SimulateurCredit {
 		return age;
 	}
 	public void setAge(int age) {
-		this.age = age;
-	}
-	public float getPourcentageBinefice() {
-		return pourcentageBinefice;
-	}
-	public void setPourcentageBinefice(float pourcentageBinefice) {
-		this.pourcentageBinefice = pourcentageBinefice;
-	}
+		this.age = age;}
+	
 	public float getMontant() {
 		return montant;
 	}
@@ -59,15 +91,38 @@ public class SimulateurCredit {
 	public void setRevenuAnnuel(float revenuAnnuel) {
 		this.revenuAnnuel = revenuAnnuel;
 	}
-	public float getTmm() {
-		return tmm;
+
+	public int getDuree() {
+		return duree;
 	}
+
+	public void setDuree(int duree) {
+		this.duree = duree;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Banque getBanque() {
+		return banque;
+	}
+
+	public void setBanque(Banque banque) {
+		this.banque = banque;
+	}
+
 	@Override
 	public String toString() {
-		return "SimulateurCredit [id=" + id + ", age=" + age + ", tmm=" + tmm + ", pourcentageBinefice="
-				+ pourcentageBinefice + ", montant=" + montant + ", salaireBrut=" + salaireBrut + ", revenuAnnuel="
-				+ revenuAnnuel + "]";
+		return "SimulateurCredit [id=" + id + ", age=" + age + ", montant=" + montant + ", salaireBrut=" + salaireBrut
+				+ ", revenuAnnuel=" + revenuAnnuel + ", duree=" + duree + ", user=" + user + ", banque=" + banque + "]";
 	}
+
+
 	
 	
 	

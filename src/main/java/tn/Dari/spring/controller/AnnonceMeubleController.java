@@ -9,18 +9,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.Dari.spring.entity.AnnanceMeuble;
-import tn.Dari.spring.service.AnnonceMeubleImpl;
 import tn.Dari.spring.service.IAnnonceMeuble;
 
+@RequestMapping("/AnnonceMeuble")
 @RestController
 public class AnnonceMeubleController {
 
 	
-	AnnonceMeubleImpl annonceMeuble = new AnnonceMeubleImpl();
+	//AnnonceMeubleImpl annonceMeuble = new AnnonceMeubleImpl();
+	@Autowired
+	IAnnonceMeuble annonceMeuble;
 
 	@GetMapping("/retrieve-all-muebleAnnounce")
 	@ResponseBody
@@ -74,25 +77,25 @@ public class AnnonceMeubleController {
 
 	}
 
-	@GetMapping("/retrieve-all-muebleAnnounce-adresse")
+	@GetMapping("/retrieve-all-muebleAnnounce-adresse/{adresse}")
 	@ResponseBody
-	public List<AnnanceMeuble> getAllAnnanceMeubleAdresse(String adresse) {
+	public List<AnnanceMeuble> getAllAnnanceMeubleAdresse(@PathVariable("adresse")String adresse) {
 
 		List<AnnanceMeuble> list = annonceMeuble.retrieveAllAnnanceMeubleAdresse(adresse);
 		return list;
 
 	}
-	@GetMapping("/retrieve-all-muebleAnnounce-ville")
+	@GetMapping("/retrieve-all-muebleAnnounce-ville/{ville}")
 	@ResponseBody
-	public List<AnnanceMeuble> getAllAnnanceMeubleVille(String vile) {
+	public List<AnnanceMeuble> getAllAnnanceMeubleVille(@PathVariable("ville")String vile) {
 
 		List<AnnanceMeuble> list = annonceMeuble.retrieveAllAnnanceMeubleville(vile);
 		return list;
 
 	}
-	@GetMapping("/retrieve-all-muebleAnnounce-region")
+	@GetMapping("/retrieve-all-muebleAnnounce-region/{region}")
 	@ResponseBody
-	public List<AnnanceMeuble> getAllAnnanceMeubleRegion(String region) {
+	public List<AnnanceMeuble> getAllAnnanceMeubleRegion(@PathVariable("region")String region) {
 
 		List<AnnanceMeuble> list = annonceMeuble.retrieveAllAnnanceMeubleregion(region);
 		return list;

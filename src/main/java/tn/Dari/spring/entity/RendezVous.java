@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
+@Table
 public class RendezVous implements Serializable {
 	
 	/**
@@ -13,10 +14,12 @@ public class RendezVous implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@Column
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	@Temporal (TemporalType.DATE)
 	private Date dateRdv;
+	private String message;
 	@Enumerated(EnumType.STRING)
 	private ValidationRdv validation;
 	@ManyToOne
@@ -32,6 +35,25 @@ public class RendezVous implements Serializable {
 		this.annonce = annonce;
 		this.user = user;
 	}
+	
+	public RendezVous(int id, Date dateRdv, String message, ValidationRdv validation, Annonce annonce, User user) {
+		super();
+		this.id = id;
+		this.dateRdv = dateRdv;
+		this.message = message;
+		this.validation = validation;
+		this.annonce = annonce;
+		this.user = user;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public RendezVous() {
 		super();
 	}
@@ -64,6 +86,12 @@ public class RendezVous implements Serializable {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "RendezVous [id=" + id + ", dateRdv=" + dateRdv + ", message=" + message + ", validation=" + validation
+				+ ", annonce=" + annonce + ", user=" + user + "]";
 	}
 	
 	

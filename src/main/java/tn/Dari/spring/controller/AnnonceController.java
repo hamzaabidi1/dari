@@ -8,11 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> master
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import tn.Dari.spring.entity.Annonce;
+<<<<<<< HEAD
 import tn.Dari.spring.service.AnnonceImpl;
 
 
@@ -22,6 +27,22 @@ import tn.Dari.spring.service.AnnonceImpl;
 public class AnnonceController {
 AnnonceImpl annonceService = new AnnonceImpl();
 	@GetMapping("/retrieve-all-Announces")
+=======
+import tn.Dari.spring.service.IAnnonce;
+
+
+
+@RequestMapping("/Annonce")
+@RestController
+public class AnnonceController {
+	
+//AnnonceImpl annonceService = new AnnonceImpl();
+	
+	@Autowired
+	IAnnonce annonceService;
+	
+	@GetMapping("/retrieve-all-announces")
+>>>>>>> master
 	@ResponseBody
 	public List<Annonce> getAllAnnonce() {
 		List<Annonce> list = annonceService.retrieveAllAnnance();
@@ -73,24 +94,42 @@ AnnonceImpl annonceService = new AnnonceImpl();
 
 	}
 
+<<<<<<< HEAD
 	@GetMapping("/retrieve-all-Announces-adresse")
 	@ResponseBody
 	public List<Annonce> getAllAnnanceAdresse(String adresse) {
+=======
+	@GetMapping("/retrieve-Announces-adresse/{adresse}")
+	@ResponseBody
+	public List<Annonce> getAllAnnanceAdresse(@PathVariable("adresse")String adresse) {
+>>>>>>> master
 
 		List<Annonce> list = annonceService.retrieveAllAnnanceAdresse(adresse);
 		return list;
 
 	}
+<<<<<<< HEAD
 	@GetMapping("/retrieve-all-Announces-ville")
 	@ResponseBody
 	public List<Annonce> getAllAnnanceVille(String vile) {
+=======
+	@GetMapping("/retrieve-Announces-ville/{ville}")
+	@ResponseBody
+	public List<Annonce> getAllAnnanceVille(@PathVariable("ville")String vile) {
+>>>>>>> master
 		List<Annonce> list = annonceService.retrieveAllAnnanceville(vile);
 		return list;
 
 	}
+<<<<<<< HEAD
 	@GetMapping("/retrieve-all-muebleAnnounces-region")
 	@ResponseBody
 	public List<Annonce> getAllAnnanceRegion(String region) {
+=======
+	@GetMapping("/retrieve-all-Announces-region/{region}")
+	@ResponseBody
+	public List<Annonce> getAllAnnanceRegion(@PathVariable("region")String region)  {
+>>>>>>> master
 
 		List<Annonce> list = annonceService.retrieveAllAnnanceregion(region);
 		return list;

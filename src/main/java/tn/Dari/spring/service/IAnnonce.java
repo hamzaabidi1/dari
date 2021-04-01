@@ -2,7 +2,11 @@ package tn.Dari.spring.service;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import tn.Dari.spring.entity.AnnanceMeuble;
+=======
+
+>>>>>>> master
 import tn.Dari.spring.entity.Annonce;
 
 public interface IAnnonce {

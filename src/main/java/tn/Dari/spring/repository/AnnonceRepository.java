@@ -1,6 +1,10 @@
 package tn.Dari.spring.repository;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Map;
+>>>>>>> master
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -17,4 +21,8 @@ public interface AnnonceRepository extends CrudRepository<Annonce,Integer > {
 	List<Annonce> findAllByAdresseLike(String Adresse);
 	List<Annonce> findAllByRegionLike(String region);
 	List<Annonce> findAllByVilleLike(String ville);
+<<<<<<< HEAD
+=======
+	
+>>>>>>> master
 }

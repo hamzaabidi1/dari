@@ -2,10 +2,12 @@ package tn.Dari.spring.service;
 
 <<<<<<< HEAD
 import java.util.List;
-
-
+import java.util.Map;
+import java.util.Set;
 
 import tn.Dari.spring.entity.Annonce;
+import tn.Dari.spring.entity.User;
+import tn.Dari.spring.entity.taux;
 
 public interface IAchat {
 	List<Annonce> retrieveAllAnnanceAscPrice();
@@ -16,7 +18,11 @@ public interface IAchat {
 	List<Annonce> retrieveAllAnnanceRegion(String region);
 	List<Annonce> retrieveAllAnnanceVille(String ville);
 	List<Annonce> retrieveAllAnnanceNombreDeChambre(int nbreChambre);
-
+	float prixParMetre (String region);
+	Annonce dernierBiensVendu();
+	void saveSearchForUser(String categorie,int surfMin, int surfMax,String region,float prixmin,float prixmax,String ville,int nbreChambre,User user);
+	List<Annonce> retrieveAllAnnanceForSearchPerUser(User user);
+	Map<String,Float> tauxAchatPerRegion();
 
 
 

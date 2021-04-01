@@ -2,12 +2,12 @@ package tn.Dari.spring.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+
 
 import tn.Dari.spring.entity.AnnanceMeuble;
 
 
-@Repository
+
 public interface IAnnonceMeuble {
 	List<AnnanceMeuble> retrieveAllAnnanceMeuble();
 	AnnanceMeuble addAnnanceMeuble(AnnanceMeuble a);

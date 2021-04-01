@@ -13,25 +13,47 @@ public class Reclamation implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	public Reclamation(String reponse, boolean repondu) {
+		super();
+		this.reponse = reponse;
+		this.repondu = repondu;
+	}
 	private String subject;
 	private String description;
 	private String categorie;
+	private String reponse;
+	private boolean repondu;
 	@ManyToOne
 	private User user;
 	@ManyToOne
 	private Annonce annonce;
 	
-	public Reclamation(int id, String subject, String description, String categorie, User user, Annonce annonce) {
+	
+	public Reclamation(int id, String subject, String description, String categorie, String reponse, boolean repondu,
+			User user, Annonce annonce) {
 		super();
 		this.id = id;
 		this.subject = subject;
 		this.description = description;
 		this.categorie = categorie;
+		this.reponse = reponse;
+		this.repondu = repondu;
 		this.user = user;
 		this.annonce = annonce;
 	}
+	public String getReponse() {
+		return reponse;
+	}
+	public void setReponse(String reponse) {
+		this.reponse = reponse;
+	}
+	public boolean isRepondu() {
+		return repondu;
+	}
+	public void setRepondu(boolean repondu) {
+		this.repondu = repondu;
+	}
 	public Reclamation() {
-		super();
 	}
 	public int getId() {
 		return id;
@@ -74,8 +96,10 @@ public class Reclamation implements Serializable{
 	@Override
 	public String toString() {
 		return "Reclamation [id=" + id + ", subject=" + subject + ", description=" + description + ", categorie="
-				+ categorie + "]";
+				+ categorie + ", reponse=" + reponse + ", repondu=" + repondu + ", user=" + user + ", annonce="
+				+ annonce + "]";
 	}
+	
 	
 	
 }
