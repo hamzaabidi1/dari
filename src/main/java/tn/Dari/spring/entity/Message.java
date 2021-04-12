@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Message implements Serializable {
 	
@@ -16,8 +18,10 @@ public class Message implements Serializable {
 	private int id;
 	private String text;
 	@ManyToOne
+	@JsonBackReference
 	private User sender;
     @ManyToOne
+    @JsonBackReference
 	private Annonce annonce;
 	
 	public Message(int id, String text, User sender, Annonce annonce) {

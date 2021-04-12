@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class AnnanceMeuble implements Serializable {
 
@@ -26,8 +28,10 @@ public class AnnanceMeuble implements Serializable {
 	private List<String> images = new ArrayList<>();
 	private float prix;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	@ManyToOne
+	@JsonBackReference
 	private Livraison livraison;
 
 	public AnnanceMeuble() {

@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Banque {
 	/**
@@ -25,9 +28,11 @@ private String description;
 private float tmm ;
 private float pourcentageBinefice;
 private boolean valid;
+@JsonManagedReference
 @OneToMany(cascade = CascadeType.ALL ,mappedBy="banque")
 private Set<SimulateurCredit> listeSimulation = new HashSet<>();
 @OneToOne
+@JsonBackReference
 private User user;
 
 public Banque(int id, String titre, String description, float tmm, float pourcentageBinefice, boolean valid,

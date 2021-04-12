@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Abonnement implements Serializable {
 
@@ -23,6 +25,7 @@ public class Abonnement implements Serializable {
 	private String contrat;
 
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 
 	public Abonnement(int id, String nom, Delais delais, AbonnementType type, String contrat, User user) {

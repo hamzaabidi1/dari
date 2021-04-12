@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Recherche implements Serializable {
 
@@ -26,6 +28,7 @@ public class Recherche implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Status statut;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 
 	public Recherche() {

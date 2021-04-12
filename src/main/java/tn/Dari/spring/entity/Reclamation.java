@@ -3,6 +3,8 @@ package tn.Dari.spring.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Reclamation implements Serializable{
 	
@@ -24,8 +26,10 @@ public class Reclamation implements Serializable{
 	private String reponse;
 	private boolean repondu;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	@ManyToOne
+	@JsonBackReference
 	private Annonce annonce;
 	
 	

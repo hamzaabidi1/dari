@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table
 public class RendezVous implements Serializable {
@@ -23,8 +25,10 @@ public class RendezVous implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private ValidationRdv validation;
 	@ManyToOne
+	@JsonBackReference
 	private Annonce annonce;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	
 	public RendezVous(int id, Date dateRdv, ValidationRdv validation, Annonce annonce, User user) {

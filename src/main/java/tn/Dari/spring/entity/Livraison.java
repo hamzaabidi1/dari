@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Livraison implements Serializable {
 
@@ -21,6 +23,7 @@ public class Livraison implements Serializable {
 	private MethodePayement methodePayement;
 	@Enumerated(EnumType.STRING)
 	private LivraisonStatus livraisonStatus;
+	@JsonManagedReference
 	@OneToMany(mappedBy = "livraison")
 	private List<AnnanceMeuble> annonceMeuble;
 

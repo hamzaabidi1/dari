@@ -5,6 +5,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Operation implements Serializable {
 
@@ -23,8 +25,10 @@ public class Operation implements Serializable {
 	private int price;
 	private String contrat;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	@ManyToOne
+	@JsonBackReference
 	private Annonce annonce;
 
 	public Operation(int id, Type operationType, String garantie, String identity, String lettreEngagement, int price,

@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class SimulateurCredit {
 	/**
@@ -21,8 +23,10 @@ public class SimulateurCredit {
 	private float revenuAnnuel;
 	private int duree;
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	@ManyToOne
+	@JsonBackReference
 	private Banque banque;
 	
 	

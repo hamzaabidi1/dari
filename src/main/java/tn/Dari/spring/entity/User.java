@@ -13,6 +13,7 @@ import javax.persistence.*;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
@@ -68,27 +69,37 @@ public class User implements Serializable {
 
 	
 	
-	
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<AnnanceMeuble> listeAnnanceMeuble= new HashSet<>();;
+	private Set<AnnanceMeuble> listeAnnanceMeuble= new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Annonce> listeAnnance = new HashSet<>();;
+	private Set<Annonce> listeAnnance = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Abonnement> listeAbannement = new HashSet<>();;
+	private Set<Abonnement> listeAbannement = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(mappedBy="user")
-	private Set<Reclamation> listeReclamation = new HashSet<>();;
+	private Set<Reclamation> listeReclamation = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
-	private Set<Recherche> listeRecherche = new HashSet<>();;
+	private Set<Recherche> listeRecherche = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(mappedBy="user")
-	private Set<Operation> listeOperation = new HashSet<>();;
+	private Set<Operation> listeOperation = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(mappedBy="sender")
-	private Set<Message> listeMessage = new HashSet<>();;
+	private Set<Message> listeMessage = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="userReviwer")
-	private Set<Reviews> listeReviews = new HashSet<>();;
+	private Set<Reviews> listeReviews = new HashSet<>();
+    @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<SimulateurCredit> listeSimulation = new HashSet<>();
+    @JsonManagedReference
 	@OneToOne(mappedBy="user")
 	private Banque banque;
+    @JsonManagedReference
 	@OneToMany(mappedBy="user")
 	private List<RendezVous> listeRendezVous = new ArrayList<>();
 	
