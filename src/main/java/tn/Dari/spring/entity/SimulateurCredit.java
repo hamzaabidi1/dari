@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class SimulateurCredit {
@@ -14,8 +16,8 @@ public class SimulateurCredit {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int age;
 	private float montant;
@@ -23,10 +25,10 @@ public class SimulateurCredit {
 	private float revenuAnnuel;
 	private int duree;
 	@ManyToOne
-	@JsonBackReference
+//	@JsonBackReference
 	private User user;
 	@ManyToOne
-	@JsonBackReference
+//	@JsonBackReference
 	private Banque banque;
 	
 	

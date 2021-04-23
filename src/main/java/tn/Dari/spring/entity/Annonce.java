@@ -10,8 +10,9 @@ import java.util.Set;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Annonce implements Serializable {
@@ -44,22 +45,22 @@ public class Annonce implements Serializable {
 	private String region;
 	private String ville;
 	@ManyToOne
-	@JsonBackReference
+	//@JsonBackReference
 	private User user;
 	
-	@JsonManagedReference
+//	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private List<RendezVous> rendezVous = new ArrayList<>();
-	@JsonManagedReference
+//	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Message> Messages = new HashSet<>();
-	@JsonManagedReference
+//	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Operation> operations = new HashSet<>();
-	@JsonManagedReference
+//	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Reviews> reviews = new HashSet<>();
-	@JsonManagedReference
+//	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Reclamation> reclamations= new HashSet<>();
 	

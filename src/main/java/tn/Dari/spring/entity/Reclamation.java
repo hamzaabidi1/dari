@@ -4,6 +4,8 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Reclamation implements Serializable{
@@ -26,10 +28,10 @@ public class Reclamation implements Serializable{
 	private String reponse;
 	private boolean repondu;
 	@ManyToOne
-	@JsonBackReference
+	//@JsonBackReference
 	private User user;
 	@ManyToOne
-	@JsonBackReference
+//	@JsonBackReference
 	private Annonce annonce;
 	
 	

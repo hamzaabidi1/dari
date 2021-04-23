@@ -52,6 +52,7 @@ public class AnnonceMeubleController {
 		AnnanceMeuble announce = annonceMeuble.updateAnnanceMeuble(a);
 		return announce;
 	}
+	
 
 	@GetMapping("/retrieve-announceMeuble/{announceMeuble-id}")
 	@ResponseBody

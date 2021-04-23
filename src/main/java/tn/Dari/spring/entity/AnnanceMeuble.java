@@ -1,12 +1,15 @@
 package tn.Dari.spring.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class AnnanceMeuble implements Serializable {
@@ -25,13 +28,14 @@ public class AnnanceMeuble implements Serializable {
 	private String ville;
 	private String adresse;
 	@ElementCollection
-	private List<String> images = new ArrayList<>();
+	private List<String> images;
 	private float prix;
 	@ManyToOne
-	@JsonBackReference
+	//@JsonIgnoreProperties("listeAnnanceMeuble")
+	@JsonIgnore
 	private User user;
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnore
 	private Livraison livraison;
 
 	public AnnanceMeuble() {

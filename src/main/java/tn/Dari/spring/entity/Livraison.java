@@ -5,7 +5,11 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Livraison implements Serializable {
@@ -23,8 +27,9 @@ public class Livraison implements Serializable {
 	private MethodePayement methodePayement;
 	@Enumerated(EnumType.STRING)
 	private LivraisonStatus livraisonStatus;
-	@JsonManagedReference
+	
 	@OneToMany(mappedBy = "livraison")
+	@JsonIgnore
 	private List<AnnanceMeuble> annonceMeuble;
 
 	public Livraison(int id, String adresse, String tel, MethodePayement methodePayement,

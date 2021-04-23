@@ -13,12 +13,17 @@ import javax.persistence.*;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.DurationSerializer;
 
 
 
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 public class User implements Serializable {
 
@@ -69,37 +74,39 @@ public class User implements Serializable {
 
 	
 	
-    @JsonManagedReference
+ //   @JsonManagedReference
+  //  @JsonIgnore
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<AnnanceMeuble> listeAnnanceMeuble= new HashSet<>();
-    @JsonManagedReference
+ //   @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<Annonce> listeAnnance = new HashSet<>();
-    @JsonManagedReference
+ //   @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<Abonnement> listeAbannement = new HashSet<>();
-    @JsonManagedReference
+  //  @JsonManagedReference
 	@OneToMany(mappedBy="user")
 	private Set<Reclamation> listeReclamation = new HashSet<>();
-    @JsonManagedReference
+  //  @JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<Recherche> listeRecherche = new HashSet<>();
-    @JsonManagedReference
+   // @JsonManagedReference
 	@OneToMany(mappedBy="user")
 	private Set<Operation> listeOperation = new HashSet<>();
-    @JsonManagedReference
+   // @JsonManagedReference
 	@OneToMany(mappedBy="sender")
 	private Set<Message> listeMessage = new HashSet<>();
-    @JsonManagedReference
+    //@JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="userReviwer")
 	private Set<Reviews> listeReviews = new HashSet<>();
-    @JsonManagedReference
+    //@JsonManagedReference
 	@OneToMany(cascade = CascadeType.ALL ,mappedBy="user")
 	private Set<SimulateurCredit> listeSimulation = new HashSet<>();
-    @JsonManagedReference
+    //@JsonManagedReference
 	@OneToOne(mappedBy="user")
 	private Banque banque;
-    @JsonManagedReference
+    //@JsonManagedReference
 	@OneToMany(mappedBy="user")
 	private List<RendezVous> listeRendezVous = new ArrayList<>();
 	

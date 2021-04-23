@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table
@@ -25,10 +27,10 @@ public class RendezVous implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private ValidationRdv validation;
 	@ManyToOne
-	@JsonBackReference
+//	@JsonBackReference
 	private Annonce annonce;
 	@ManyToOne
-	@JsonBackReference
+//	@JsonBackReference
 	private User user;
 	
 	public RendezVous(int id, Date dateRdv, ValidationRdv validation, Annonce annonce, User user) {
