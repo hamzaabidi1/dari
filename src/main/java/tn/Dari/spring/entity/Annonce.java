@@ -11,6 +11,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -31,8 +32,7 @@ public class Annonce implements Serializable {
 	private String categorie;
 	private float prix;
 	private int NumberOfVisits;
-	@ElementCollection
-	private List<String> photo = new ArrayList<>();
+	private String photo;
 	private String adresse;
 	@Enumerated(EnumType.STRING)
 	private Type type;
@@ -45,23 +45,28 @@ public class Annonce implements Serializable {
 	private String region;
 	private String ville;
 	@ManyToOne
+	@JsonIgnore
 	//@JsonBackReference
 	private User user;
-	
+	@JsonIgnore
 //	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private List<RendezVous> rendezVous = new ArrayList<>();
+	@JsonIgnore
 //	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Message> Messages = new HashSet<>();
+	@JsonIgnore
 //	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
 	private Set<Operation> operations = new HashSet<>();
 //	@JsonManagedReference
+	@JsonIgnore
 	@OneToMany(mappedBy="annonce")
 	private Set<Reviews> reviews = new HashSet<>();
 //	@JsonManagedReference
 	@OneToMany(mappedBy="annonce")
+	@JsonIgnore
 	private Set<Reclamation> reclamations= new HashSet<>();
 	
 	
@@ -70,7 +75,7 @@ public class Annonce implements Serializable {
 	
 	
 	public Annonce(int id, String title, String description, String categorie, float prix, int numberOfVisits,
-			List<String> photo, String adresse, Type type, int surface, Status status, Date date, int nbreChambre,
+			String photo, String adresse, Type type, int surface, Status status, Date date, int nbreChambre,
 			String region, String ville, User user, List<RendezVous> rendezVous, Set<Message> messages,
 			Set<Operation> operations, Set<Reviews> reviews, Set<Reclamation> reclamations) {
 		super();
@@ -135,10 +140,10 @@ public class Annonce implements Serializable {
 	public void setNumberOfVisits(int numberOfVisits) {
 		NumberOfVisits = numberOfVisits;
 	}
-	public List<String> getPhoto() {
+	public String getPhoto() {
 		return photo;
 	}
-	public void setPhoto(List<String> photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 	public String getAdresse() {
@@ -216,15 +221,7 @@ public class Annonce implements Serializable {
 	public void setOperations(Set<Operation> operations) {
 		this.operations = operations;
 	}
-	@Override
-	public String toString() {
-		return "Annonce [id=" + id + ", title=" + title + ", description=" + description + ", categorie=" + categorie
-				+ ", prix=" + prix + ", NumberOfVisits=" + NumberOfVisits + ", photo=" + photo + ", adresse=" + adresse
-				+ ", type=" + type + ", surface=" + surface + ", status=" + status + ", date=" + date + ", nbreChambre="
-				+ nbreChambre + ", region=" + region + ", ville=" + ville + ", user=" + user + ", rendezVous="
-				+ rendezVous + ", Messages=" + Messages + ", operations=" + operations + ", reviews=" + reviews
-				+ ", reclamations=" + reclamations + "]";
-	}
+	
 	
 	
 	

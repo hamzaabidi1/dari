@@ -35,7 +35,7 @@ public class AbonnementController {
 	@PostMapping("/add-Abonnement")
 	@ResponseBody
 	public Abonnement ajouterAbonnement(@RequestBody Abonnement a ) {
-     SMSService.send("21573407","Votre abonnement est fait avec succée");
+     //SMSService.send("21573407","Votre abonnement est fait avec succée");
 		return AbonnementService.addAbonnement(a);
 	}
 	@DeleteMapping("/remove-Abonnement/{Abonnement-id}")
@@ -82,4 +82,12 @@ public class AbonnementController {
 	return AbonnementService.tauxAbonnement();
  
 			}
+	@GetMapping("/verifyAssurance/{id}")
+	@ResponseBody
+	public boolean VerifyAssurance (@PathVariable int id ) {
+	 Abonnement ab= AbonnementService.retrieveAbonnement(id);
+	if (ab.getType()==AbonnementType.assurance)
+	return true;
+	return false; 
+	} 
 }

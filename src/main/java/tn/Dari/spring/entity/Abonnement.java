@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -25,7 +26,7 @@ public class Abonnement implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private AbonnementType type;
 	private String contrat;
-
+	@JsonIgnore
 	@ManyToOne
 	//@JsonBackReference
 	private User user;

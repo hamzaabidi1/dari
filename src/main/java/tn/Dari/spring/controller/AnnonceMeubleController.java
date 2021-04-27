@@ -54,9 +54,9 @@ public class AnnonceMeubleController {
 	}
 	
 
-	@GetMapping("/retrieve-announceMeuble/{announceMeuble-id}")
+	@GetMapping("/retrieve-announceMeuble/{announceMeubleId}")
 	@ResponseBody
-	public AnnanceMeuble getAnnanceMeuble(@PathVariable("announceMeubles-id") int id) {
+	public AnnanceMeuble getAnnanceMeuble(@PathVariable("announceMeubleId") int id) {
 		AnnanceMeuble announce = annonceMeuble.retrieveAnnanceMeuble(id);
 		return announce;
 	}
