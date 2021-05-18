@@ -54,7 +54,7 @@ public class LivraisonController {
 	}
 	@GetMapping("/retrieve-Livraison/{livraison-id}")
 	@ResponseBody
-	public Livraison getLivraison(@PathVariable("Livraison-id") int id) {
+	public Livraison getLivraison(@PathVariable("livraison-id") int id) {
 		return livraisonService.retrieveLivraison(id);
 	}
 	@GetMapping("/retrieve-all-Livraison-adresse/{adresse}")
@@ -78,7 +78,7 @@ public class LivraisonController {
 		return list;
 
 	}
-	@PutMapping("/modify-Livraison/{AnnounceMeuble-id}/{Livraison-id}")
+	@PutMapping("/AddMeubleto-Livraison/{AnnounceMeuble-id}/{Livraison-id}")
 	@ResponseBody
 	public void ajoutMaubleToLivraison(@PathVariable("AnnounceMeuble-id")int idAnnoncemeuble,@PathVariable("Livraison-id") int idlivraison) {
 

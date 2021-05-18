@@ -75,7 +75,7 @@ public class AuthRestController {
    IReclamationRepository iReclamationRepository;
 
 	
-	@PostMapping("/signin")
+   @PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 try{
 		User u=userRepository.findByName(loginRequest.getUsername()).orElse(null);
@@ -123,6 +123,7 @@ try{
 	return ResponseEntity.badRequest().body(new MessageResponse("Error:  try to push a true username and password"));
 }	
 }
+
 
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
